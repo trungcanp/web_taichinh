@@ -8,57 +8,50 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #f8fafc; color: #1e293b; padding-bottom: 95px; }
 
-    /* Top Bar */
     .top-bar { background: #0f172a; color: #94a3b8; font-size: 11px; text-align: center; padding: 8px 12px; }
     .top-bar b { color: #38bdf8; }
 
-    /* Hero Header */
     .hero-box { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 22px 16px 26px; border-radius: 0 0 24px 24px; text-align: center; box-shadow: 0 4px 20px rgba(2,132,199,0.25); }
     .hero-badge { display: inline-block; background: rgba(255,255,255,0.18); padding: 4px 12px; border-radius: 99px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
     .hero-title { font-size: 20px; font-weight: 800; line-height: 1.3; }
     .hero-desc { font-size: 12px; opacity: 0.9; margin-top: 6px; }
 
-    /* Container */
     .container { max-width: 480px; margin: -14px auto 0; padding: 0 14px; }
 
-    /* Filter Tabs */
     .tab-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
     .tab-bar::-webkit-scrollbar { display: none; }
     .tab-item { flex-shrink: 0; background: #ffffff; border: 1px solid #e2e8f0; padding: 7px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; }
     .tab-item.active { background: #0284c7; color: #ffffff; border-color: #0284c7; box-shadow: 0 2px 8px rgba(2,132,199,0.3); }
 
-    /* Promo Notice */
     .promo-banner { background: #ffffff; border: 1px dashed #0284c7; border-radius: 14px; padding: 12px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
     .promo-icon { background: #e0f2fe; color: #0284c7; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
     .promo-text { font-size: 11px; color: #334155; line-height: 1.4; }
 
-    /* Product Card */
     .card { background: #ffffff; border-radius: 18px; padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); border: 1px solid #edf2f7; }
     .card-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; }
-    .brand-left { display: flex; align-items: center; gap: 10px; }
-    
-    /* Logo Image Style */
-    .brand-img { width: 46px; height: 46px; border-radius: 12px; object-fit: contain; background: #ffffff; border: 1px solid #e2e8f0; padding: 3px; }
+    .brand-left { display: flex; align-items: center; gap: 12px; }
+
+    /* Logo Badge sang trọng chuẩn màu thương hiệu */
+    .brand-badge { width: 48px; height: 48px; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 900; color: #ffffff; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.2); }
+    .brand-badge .txt-main { font-size: 13px; letter-spacing: -0.5px; line-height: 1; font-weight: 800; }
+    .brand-badge .txt-sub { font-size: 8px; opacity: 0.9; margin-top: 2px; text-transform: uppercase; }
+
     .brand-name { font-size: 15px; font-weight: 800; color: #0f172a; }
     .brand-tag { display: inline-block; font-size: 10px; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; margin-top: 2px; }
 
-    /* Metrics Grid */
     .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; background: #f8fafc; padding: 10px 12px; border-radius: 12px; }
     .metric-item-label { font-size: 10px; color: #64748b; font-weight: 500; }
     .metric-item-val { font-size: 14px; font-weight: 800; color: #0f172a; margin-top: 2px; }
     .val-highlight { color: #e11d48; }
 
-    /* Highlights */
     .feature-list { list-style: none; margin-bottom: 14px; }
     .feature-list li { font-size: 11px; color: #475569; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
     .feature-list li span { color: #10b981; font-weight: bold; }
 
-    /* Action Buttons */
     .btn-group { display: flex; gap: 8px; }
     .btn-apply { flex: 2; display: block; text-align: center; text-decoration: none; background: #f97316; color: #ffffff; font-weight: 800; font-size: 13px; padding: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(249,115,22,0.3); }
     .btn-consult { flex: 1; display: block; text-align: center; text-decoration: none; background: #f1f5f9; color: #334155; font-weight: 700; font-size: 12px; padding: 10px; border-radius: 10px; border: 1px solid #cbd5e1; }
 
-    /* Fixed Sticky Footer */
     .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; border-top: 1px solid #e2e8f0; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.06); }
     .footer-inner { max-width: 480px; margin: 0 auto; }
     .btn-zalo-float { display: flex; align-items: center; justify-content: center; gap: 8px; background: #16a34a; color: #ffffff; text-decoration: none; padding: 11px; border-radius: 12px; font-size: 13px; font-weight: 800; box-shadow: 0 2px 8px rgba(22,163,74,0.3); }
@@ -98,7 +91,10 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/vi/f/f3/Vietcredit_logo.png" class="brand-img" alt="VietCredit">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <div class="txt-main">VC</div>
+            <div class="txt-sub">Credit</div>
+          </div>
           <div>
             <div class="brand-name">VietCredit</div>
             <span class="brand-tag">Thẻ Vay Đa Năng</span>
@@ -129,7 +125,10 @@
     <div class="card" data-cat="luong cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo-mcredit.png" class="brand-img" alt="MCredit">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+            <div class="txt-main">MC</div>
+            <div class="txt-sub">Credit</div>
+          </div>
           <div>
             <div class="brand-name">MCredit</div>
             <span class="brand-tag">Tài Chính Quân Đội MB</span>
@@ -160,7 +159,10 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Logo_HD_SAISON.png" class="brand-img" alt="HD SAISON">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #ea580c, #c2410c);">
+            <div class="txt-main">HD</div>
+            <div class="txt-sub">Saison</div>
+          </div>
           <div>
             <div class="brand-name">HD SAISON</div>
             <span class="brand-tag">Duyệt Tiền Mặt Nhanh</span>
@@ -191,7 +193,10 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://play-lh.googleusercontent.com/9nFkUffv8u_4y48F-gEwzKj9hXfW7b_wE4Lq4R0" onerror="this.src='https://ui-avatars.com/api/?name=TNEX&background=6366f1&color=fff'" class="brand-img" alt="TNEX">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+            <div class="txt-main">TNEX</div>
+            <div class="txt-sub">by MSB</div>
+          </div>
           <div>
             <div class="brand-name">TNEX (by MSB)</div>
             <span class="brand-tag">Ngân Hàng Thuần Số</span>
@@ -222,7 +227,10 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/FE_Credit_Logo.png" class="brand-img" alt="FE Credit">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #16a34a, #15803d);">
+            <div class="txt-main">FE</div>
+            <div class="txt-sub">Credit</div>
+          </div>
           <div>
             <div class="brand-name">FE Credit</div>
             <span class="brand-tag">Hồ Sơ Cực Đơn Giản</span>
@@ -253,7 +261,10 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://play-lh.googleusercontent.com/s6Z_yU1_L5qQfM2Hw_rC1X7jW_8K" onerror="this.src='https://ui-avatars.com/api/?name=CAKE&background=ec4899&color=fff'" class="brand-img" alt="Cake">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+            <div class="txt-main">CAKE</div>
+            <div class="txt-sub">VPBank</div>
+          </div>
           <div>
             <div class="brand-name">Cake by VPBank</div>
             <span class="brand-tag">Duyệt Hạn Mức Tức Thì</span>
@@ -284,7 +295,10 @@
     <div class="card" data-cat="luong the">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/VPBank_logo.svg" class="brand-img" alt="VPBank">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #059669, #047857);">
+            <div class="txt-main">VPB</div>
+            <div class="txt-sub">Bank</div>
+          </div>
           <div>
             <div class="brand-name">VPBank Online</div>
             <span class="brand-tag">Ngân Hàng Tiêu Chuẩn</span>
@@ -315,7 +329,10 @@
     <div class="card" data-cat="the luong">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/TPBank_logo.svg" class="brand-img" alt="TPBank">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+            <div class="txt-main">TPB</div>
+            <div class="txt-sub">Bank</div>
+          </div>
           <div>
             <div class="brand-name">TPBank</div>
             <span class="brand-tag">Mở Thẻ Hoàn Tiền</span>
@@ -342,11 +359,11 @@
       </div>
     </div>
 
-    <!-- 9. MB BANK -->
+    <!-- 9. MB BANK (Giữ lại ảnh logo bạn đã thích) -->
     <div class="card" data-cat="luong cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" class="brand-img" alt="MB Bank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" style="width: 48px; height: 48px; object-fit: contain; border-radius: 14px; background: #fff; border: 1px solid #e2e8f0; padding: 4px;" alt="MB Bank">
           <div>
             <div class="brand-name">MB Bank (MBV)</div>
             <span class="brand-tag">Ngân Hàng Quân Đội</span>
@@ -377,7 +394,10 @@
     <div class="card" data-cat="cccd luong">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_SHB.svg" class="brand-img" alt="SHB Finance">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #ea580c, #d97706);">
+            <div class="txt-main">SHB</div>
+            <div class="txt-sub">Finance</div>
+          </div>
           <div>
             <div class="brand-name">SHB Finance</div>
             <span class="brand-tag">Gói Vay Linh Hoạt</span>
@@ -408,7 +428,10 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Home_Credit_logo.svg" class="brand-img" alt="Home Credit">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">
+            <div class="txt-main">HC</div>
+            <div class="txt-sub">Home</div>
+          </div>
           <div>
             <div class="brand-name">Home Credit</div>
             <span class="brand-tag">Duyệt Trong 10 Phút</span>
@@ -439,7 +462,10 @@
     <div class="card" data-cat="the luong">
       <div class="card-header">
         <div class="brand-left">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/VIB_logo.svg" class="brand-img" alt="VIB">
+          <div class="brand-badge" style="background: linear-gradient(135deg, #0284c7, #0f766e);">
+            <div class="txt-main">VIB</div>
+            <div class="txt-sub">Bank</div>
+          </div>
           <div>
             <div class="brand-name">Ngân Hàng VIB</div>
             <span class="brand-tag">Dẫn Đầu Thẻ Tín Dụng</span>
@@ -468,7 +494,6 @@
 
   </main>
 
-  <!-- Sticky Hotline/Zalo -->
   <footer class="fixed-footer">
     <div class="footer-inner">
       <a href="https://zalo.me/0903101248" target="_blank" class="btn-zalo-float">
