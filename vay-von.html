@@ -37,8 +37,8 @@
     .card-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; }
     .brand-left { display: flex; align-items: center; gap: 10px; }
     
-    /* Logo Box Design */
-    .brand-logo-box { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; color: #fff; flex-shrink: 0; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+    /* Logo Image Style */
+    .brand-img { width: 46px; height: 46px; border-radius: 12px; object-fit: contain; background: #ffffff; border: 1px solid #e2e8f0; padding: 3px; }
     .brand-name { font-size: 15px; font-weight: 800; color: #0f172a; }
     .brand-tag { display: inline-block; font-size: 10px; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; margin-top: 2px; }
 
@@ -86,7 +86,7 @@
       <div class="tab-item" onclick="filterLoans('the', this)">Mở thẻ tín dụng</div>
     </div>
 
-    <!-- Banner nhắc nhở -->
+    <!-- Banner khuyến mãi -->
     <div class="promo-banner">
       <div class="promo-icon">⚡</div>
       <div class="promo-text">
@@ -98,7 +98,7 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #f59e0b, #d97706);">VC</div>
+          <img src="https://upload.wikimedia.org/wikipedia/vi/f/f3/Vietcredit_logo.png" class="brand-img" alt="VietCredit">
           <div>
             <div class="brand-name">VietCredit</div>
             <span class="brand-tag">Thẻ Vay Đa Năng</span>
@@ -129,7 +129,7 @@
     <div class="card" data-cat="luong cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #0284c7, #0369a1);">MC</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo-mcredit.png" class="brand-img" alt="MCredit">
           <div>
             <div class="brand-name">MCredit</div>
             <span class="brand-tag">Tài Chính Quân Đội MB</span>
@@ -160,7 +160,7 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #ea580c, #c2410c);">HD</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Logo_HD_SAISON.png" class="brand-img" alt="HD SAISON">
           <div>
             <div class="brand-name">HD SAISON</div>
             <span class="brand-tag">Duyệt Tiền Mặt Nhanh</span>
@@ -191,7 +191,7 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">TNEX</div>
+          <img src="https://play-lh.googleusercontent.com/9nFkUffv8u_4y48F-gEwzKj9hXfW7b_wE4Lq4R0" onerror="this.src='https://ui-avatars.com/api/?name=TNEX&background=6366f1&color=fff'" class="brand-img" alt="TNEX">
           <div>
             <div class="brand-name">TNEX (by MSB)</div>
             <span class="brand-tag">Ngân Hàng Thuần Số</span>
@@ -222,7 +222,7 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #16a34a, #15803d);">FE</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/FE_Credit_Logo.png" class="brand-img" alt="FE Credit">
           <div>
             <div class="brand-name">FE Credit</div>
             <span class="brand-tag">Hồ Sơ Cực Đơn Giản</span>
@@ -253,7 +253,7 @@
     <div class="card" data-cat="the cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #ec4899, #db2777);">CAKE</div>
+          <img src="https://play-lh.googleusercontent.com/s6Z_yU1_L5qQfM2Hw_rC1X7jW_8K" onerror="this.src='https://ui-avatars.com/api/?name=CAKE&background=ec4899&color=fff'" class="brand-img" alt="Cake">
           <div>
             <div class="brand-name">Cake by VPBank</div>
             <span class="brand-tag">Duyệt Hạn Mức Tức Thì</span>
@@ -284,7 +284,7 @@
     <div class="card" data-cat="luong the">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #059669, #047857);">VPB</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/VPBank_logo.svg" class="brand-img" alt="VPBank">
           <div>
             <div class="brand-name">VPBank Online</div>
             <span class="brand-tag">Ngân Hàng Tiêu Chuẩn</span>
@@ -315,7 +315,7 @@
     <div class="card" data-cat="the luong">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">TPB</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/TPBank_logo.svg" class="brand-img" alt="TPBank">
           <div>
             <div class="brand-name">TPBank</div>
             <span class="brand-tag">Mở Thẻ Hoàn Tiền</span>
@@ -346,7 +346,7 @@
     <div class="card" data-cat="luong cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #1d4ed8, #1e40af);">MB</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" class="brand-img" alt="MB Bank">
           <div>
             <div class="brand-name">MB Bank (MBV)</div>
             <span class="brand-tag">Ngân Hàng Quân Đội</span>
@@ -377,7 +377,7 @@
     <div class="card" data-cat="cccd luong">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #ea580c, #d97706);">SHB</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_SHB.svg" class="brand-img" alt="SHB Finance">
           <div>
             <div class="brand-name">SHB Finance</div>
             <span class="brand-tag">Gói Vay Linh Hoạt</span>
@@ -408,7 +408,7 @@
     <div class="card" data-cat="cccd">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">HC</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Home_Credit_logo.svg" class="brand-img" alt="Home Credit">
           <div>
             <div class="brand-name">Home Credit</div>
             <span class="brand-tag">Duyệt Trong 10 Phút</span>
@@ -439,7 +439,7 @@
     <div class="card" data-cat="the luong">
       <div class="card-header">
         <div class="brand-left">
-          <div class="brand-logo-box" style="background: linear-gradient(135deg, #0284c7, #0f766e);">VIB</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/VIB_logo.svg" class="brand-img" alt="VIB">
           <div>
             <div class="brand-name">Ngân Hàng VIB</div>
             <span class="brand-tag">Dẫn Đầu Thẻ Tín Dụng</span>
