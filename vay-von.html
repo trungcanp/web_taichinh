@@ -3,237 +3,500 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hệ Thống Gói Vay & Thẻ Online</title>
+  <title>So Sánh & Đăng Ký Vay Trực Tuyến - Tài Chính 4.0</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #f1f5f9; color: #1e293b; padding-bottom: 95px; }
-    .header { background: #1d4ed8; color: #fff; padding: 24px 16px; text-align: center; border-radius: 0 0 20px 20px; }
-    .badge-top { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-bottom: 8px; }
-    .header h1 { font-size: 18px; font-weight: 800; }
-    .container { max-width: 480px; margin: 0 auto; padding: 16px; }
-    .card { background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; }
-    .card-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; background: #dbeafe; color: #1e40af; }
-    .card-name { font-size: 16px; font-weight: 700; margin-top: 4px; color: #0f172a; }
-    .limit-label { font-size: 10px; color: #64748b; text-align: right; }
-    .limit-value { font-size: 15px; font-weight: 800; text-align: right; }
-    .card-desc { font-size: 12px; color: #475569; margin: 10px 0 12px 0; line-height: 1.4; }
-    .btn { display: block; width: 100%; text-align: center; text-decoration: none; padding: 11px 0; border-radius: 10px; font-weight: 700; font-size: 13px; color: #fff; }
-    .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 12px 16px; border-top: 1px solid #e2e8f0; z-index: 100; }
+    body { background-color: #f8fafc; color: #1e293b; padding-bottom: 95px; }
+
+    /* Top Announcement Bar */
+    .top-bar { background: #0f172a; color: #94a3b8; font-size: 11px; text-align: center; padding: 8px 12px; }
+    .top-bar b { color: #38bdf8; }
+
+    /* Hero Banner Alpha Style */
+    .hero-box { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 22px 16px 26px; border-radius: 0 0 24px 24px; text-align: center; box-shadow: 0 4px 20px rgba(2,132,199,0.25); }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.18); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 99px; font-size: 11px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .hero-title { font-size: 20px; font-weight: 800; line-height: 1.3; }
+    .hero-desc { font-size: 12px; opacity: 0.9; margin-top: 6px; }
+
+    /* Main Container */
+    .container { max-width: 480px; margin: -14px auto 0; padding: 0 14px; }
+
+    /* Filter Tabs */
+    .tab-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-item { flex-shrink: 0; background: #ffffff; border: 1px solid #e2e8f0; padding: 7px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
+    .tab-item.active { background: #0284c7; color: #ffffff; border-color: #0284c7; box-shadow: 0 2px 8px rgba(2,132,199,0.3); }
+
+    /* Promo Notice Banner */
+    .promo-banner { background: #ffffff; border: 1px dashed #0284c7; border-radius: 14px; padding: 12px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    .promo-icon { background: #e0f2fe; color: #0284c7; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .promo-text { font-size: 11px; color: #334155; line-height: 1.4; }
+
+    /* Product Card */
+    .card { background: #ffffff; border-radius: 18px; padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); border: 1px solid #edf2f7; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; }
+    .brand-left { display: flex; align-items: center; gap: 10px; }
+    .brand-logo { width: 44px; height: 44px; border-radius: 12px; object-fit: contain; background: #f8fafc; border: 1px solid #e2e8f0; padding: 4px; }
+    .brand-name { font-size: 15px; font-weight: 800; color: #0f172a; }
+    .brand-tag { display: inline-block; font-size: 10px; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; margin-top: 2px; }
+
+    /* Rate & Metric Grid */
+    .metric-grid { display: grid; grid-cols: 2; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; background: #f8fafc; padding: 10px 12px; border-radius: 12px; }
+    .metric-item-label { font-size: 10px; color: #64748b; font-weight: 500; }
+    .metric-item-val { font-size: 14px; font-weight: 800; color: #0f172a; margin-top: 2px; }
+    .val-highlight { color: #e11d48; }
+
+    /* Highlights / Features List */
+    .feature-list { list-style: none; margin-bottom: 14px; }
+    .feature-list li { font-size: 11px; color: #475569; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .feature-list li span { color: #10b981; font-weight: bold; }
+
+    /* Action Buttons */
+    .btn-group { display: flex; gap: 8px; }
+    .btn-apply { flex: 2; display: block; text-align: center; text-decoration: none; background: #f97316; hover: background: #ea580c; color: #ffffff; font-weight: 800; font-size: 13px; padding: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(249,115,22,0.3); }
+    .btn-consult { flex: 1; display: block; text-align: center; text-decoration: none; background: #f1f5f9; color: #334155; font-weight: 700; font-size: 12px; padding: 10px; border-radius: 10px; border: 1px solid #cbd5e1; }
+
+    /* Fixed Floating Footer */
+    .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; border-top: 1px solid #e2e8f0; z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.06); }
     .footer-inner { max-width: 480px; margin: 0 auto; }
+    .btn-zalo-float { display: flex; align-items: center; justify-content: center; gap: 8px; background: #16a34a; color: #ffffff; text-decoration: none; padding: 11px; border-radius: 12px; font-size: 13px; font-weight: 800; box-shadow: 0 2px 8px rgba(22,163,74,0.3); }
   </style>
 </head>
 <body>
 
-  <header class="header">
-    <div class="badge-top">HỆ THỐNG VAY ONLINE 24/7</div>
-    <h1>DANH SÁCH GÓI VAY & THẺ ƯU ĐÃI</h1>
+  <div class="top-bar">
+    🛡️ Cam kết <b>100% không thu phí trước</b> • Bảo mật thông tin hồ sơ
+  </div>
+
+  <header class="hero-box">
+    <div class="hero-badge">CHUYÊN GIA TÀI CHÍNH CỦA MỌI NHÀ</div>
+    <h1 class="hero-title">So Sánh Khoản Vay & Thẻ<br>Nhận Tiền Liền Tay</h1>
+    <p class="hero-desc">Sàng lọc các gói hỗ trợ duyệt cao nhất từ 12 ngân hàng & đối tác</p>
   </header>
 
   <main class="container">
 
-    <!-- 1. VietCredit -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag">Thẻ Vay Tiền Mặt</span>
-          <div class="card-name">VietCredit</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#1d4ed8">100 Triệu</div>
-        </div>
-      </div>
-      <div class="card-desc">✓ Rút tiền mặt tại ATM toàn quốc, chỉ tính lãi trên số tiền thực dùng.</div>
-      <a href="LINK_AFFILIATE_VIETCREDIT" target="_blank" class="btn" style="background:#2563eb">Đăng Ký VietCredit</a>
+    <!-- Filter Tags (Tab lọc) -->
+    <div class="tab-bar">
+      <div class="tab-item active" onclick="filterLoans('all', this)">Tất cả gói vay</div>
+      <div class="tab-item" onclick="filterLoans('cccd', this)">Chỉ cần CCCD</div>
+      <div class="tab-item" onclick="filterLoans('luong', this)">Vay qua lương</div>
+      <div class="tab-item" onclick="filterLoans('the', this)">Mở thẻ tín dụng</div>
     </div>
 
-    <!-- 2. MCredit -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag">Tài Chính Quân Đội</span>
-          <div class="card-name">MCredit</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#1d4ed8">100 Triệu</div>
+    <!-- Banner khuyến mãi -->
+    <div class="promo-banner">
+      <div class="promo-icon">⚡</div>
+      <div class="promo-text">
+        <b>Mẹo duyệt hồ sơ:</b> Bạn có thể đăng ký đồng thời 2-3 đối tác để so sánh lãi suất và gia tăng tỷ lệ giải ngân nhanh nhất!
+      </div>
+    </div>
+
+    <!-- 1. VIETCREDIT -->
+    <div class="card" data-cat="the cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://images.vietcredit.vn/vietcredit/logo.png" onerror="this.src='https://ui-avatars.com/api/?name=VC&background=2563eb&color=fff'" class="brand-logo" alt="VietCredit">
+          <div>
+            <div class="brand-name">VietCredit</div>
+            <span class="brand-tag">Thẻ Vay Đa Năng</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Vay theo lương, hóa đơn điện hoặc BH nhân thọ duyệt nhanh.</div>
-      <a href="LINK_AFFILIATE_MCREDIT" target="_blank" class="btn" style="background:#0f172a">Đăng Ký MCredit</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức tối đa</div>
+          <div class="metric-item-val val-highlight">100 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Kỳ hạn vay</div>
+          <div class="metric-item-val">Linh hoạt rút/trả</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Rút tiền mặt tại ATM toàn quốc 24/7</li>
+        <li><span>✓</span> Chỉ tính lãi trên số tiền thực tế rút sử dụng</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_VIETCREDIT" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
+    </div>
+
+    <!-- 2. MCREDIT -->
+    <div class="card" data-cat="luong cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://mcredit.com.vn/assets/images/logo.svg" onerror="this.src='https://ui-avatars.com/api/?name=MC&background=0284c7&color=fff'" class="brand-logo" alt="MCredit">
+          <div>
+            <div class="brand-name">MCredit</div>
+            <span class="brand-tag">Tài Chính Quân Đội MB</span>
+          </div>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">100 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Lãi suất tham khảo</div>
+          <div class="metric-item-val">Từ 1.4% / tháng</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Vay theo lương, hóa đơn điện hoặc BH nhân thọ</li>
+        <li><span>✓</span> Không thế chấp tài sản, giải ngân về tài khoản</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_MCREDIT" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
     <!-- 3. HD SAISON -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#fef3c7; color:#b45309">Tiêu Dùng Nhanh</span>
-          <div class="card-name">HD SAISON</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#b45309">130 Triệu</div>
+    <div class="card" data-cat="cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://www.hdsaison.com.vn/themes/hdsaison/assets/images/logo.png" onerror="this.src='https://ui-avatars.com/api/?name=HD&background=ea580c&color=fff'" class="brand-logo" alt="HD SAISON">
+          <div>
+            <div class="brand-name">HD SAISON</div>
+            <span class="brand-tag">Duyệt Tiền Mặt Nhanh</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Hỗ trợ vay tiền mặt tiêu dùng nhanh, hồ sơ chỉ cần CCCD gắn chip.</div>
-      <a href="LINK_AFFILIATE_HDSAISON" target="_blank" class="btn" style="background:#0f172a">Đăng Ký HD SAISON</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">130 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Thời gian duyệt</div>
+          <div class="metric-item-val">Duyệt trong ngày</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Thủ tục gói vay đơn giản chỉ với CCCD gắn chip</li>
+        <li><span>✓</span> Mạng lưới phủ rộng, hỗ trợ khách hàng toàn quốc</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_HDSAISON" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 4. TNEX (MSB) -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#f3e8ff; color:#6b21a8">Ngân Hàng Số</span>
-          <div class="card-name">TNEX (by MSB)</div>
-        </div>
-        <div>
-          <div class="limit-label">Đăng ký eKYC</div>
-          <div class="limit-value" style="color:#6b21a8">0 Đồng</div>
+    <!-- 4. TNEX -->
+    <div class="card" data-cat="the cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://www.tnex.com.vn/wp-content/themes/tnex/images/logo.svg" onerror="this.src='https://ui-avatars.com/api/?name=TN&background=6366f1&color=fff'" class="brand-logo" alt="TNEX">
+          <div>
+            <div class="brand-name">TNEX (by MSB)</div>
+            <span class="brand-tag">Ngân Hàng Số 0 Đồng</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Mở tài khoản online miễn phí trọn đời, tiếp cận gói hạn mức thấu chi.</div>
-      <a href="LINK_AFFILIATE_TNEX" target="_blank" class="btn" style="background:#2563eb">Mở Tài Khoản TNEX</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Đăng ký online</div>
+          <div class="metric-item-val val-highlight">0 Đồng Phí</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Thời gian mở thẻ</div>
+          <div class="metric-item-val">2 Phút eKYC</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Mở tài khoản online nhận thẻ ATM tận nhà miễn phí</li>
+        <li><span>✓</span> Tiếp cận gói tiêu dùng linh hoạt không cần giấy tờ</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_TNEX" target="_blank" class="btn-apply">MỞ TÀI KHOẢN</a>
+      </div>
     </div>
 
-    <!-- 5. FE Credit -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#dcfce7; color:#15803d">Duyệt Nhanh</span>
-          <div class="card-name">FE Credit</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#16a34a">70 Triệu</div>
+    <!-- 5. FE CREDIT -->
+    <div class="card" data-cat="cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://fecredit.com.vn/wp-content/themes/fecredit/assets/images/logo.svg" onerror="this.src='https://ui-avatars.com/api/?name=FE&background=16a34a&color=fff'" class="brand-logo" alt="FE Credit">
+          <div>
+            <div class="brand-name">FE Credit</div>
+            <span class="brand-tag">Hồ Sơ Đơn Giản</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Chỉ cần CCCD gắn chip + Cà vẹt xe máy hoặc sim chính chủ, nhận qua ATM.</div>
-      <a href="LINK_AFFILIATE_FECREDIT" target="_blank" class="btn" style="background:#16a34a">Đăng Ký FE Credit</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">70 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Nhận tiền</div>
+          <div class="metric-item-val">Sau 2 Giờ</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Chỉ cần CCCD gắn chip + Cà vẹt xe hoặc Sim chính chủ</li>
+        <li><span>✓</span> Nhận giải ngân thẳng vào số tài khoản ngân hàng</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_FECREDIT" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 6. Cake by VPBank -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#fce7f3; color:#9d174d">Ngân Hàng Số</span>
-          <div class="card-name">Cake by VPBank</div>
-        </div>
-        <div>
-          <div class="limit-label">Vay / Mở thẻ</div>
-          <div class="limit-value" style="color:#db2777">50 Triệu</div>
+    <!-- 6. CAKE BY VPBANK -->
+    <div class="card" data-cat="the cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://cake.vn/wp-content/uploads/2021/04/Logo-Cake.svg" onerror="this.src='https://ui-avatars.com/api/?name=CK&background=ec4899&color=fff'" class="brand-logo" alt="Cake">
+          <div>
+            <div class="brand-name">Cake by VPBank</div>
+            <span class="brand-tag">Duyệt Hạn Mức 2 Phút</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Đăng ký eKYC trong 2 phút, cấp thẻ tín dụng ảo và hạn mức vay tự động.</div>
-      <a href="LINK_AFFILIATE_CAKE" target="_blank" class="btn" style="background:#db2777">Đăng Ký Cake Ngay</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức phê duyệt</div>
+          <div class="metric-item-val val-highlight">50 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Phương thức</div>
+          <div class="metric-item-val">100% Trên App</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Cấp thẻ tín dụng ảo chi tiêu ngay sau khi đăng ký</li>
+        <li><span>✓</span> Khoản vay tiêu dùng duyệt tự động không gọi người thân</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_CAKE" target="_blank" class="btn-apply">MỞ TÀI KHOẢN</a>
+      </div>
     </div>
 
-    <!-- 7. VPBank Online -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#dcfce7; color:#15803d">Ngân Hàng TMCP</span>
-          <div class="card-name">VPBank Online</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#16a34a">200 Triệu</div>
+    <!-- 7. VPBANK ONLINE -->
+    <div class="card" data-cat="luong the">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/VPBank_logo.svg" class="brand-logo" alt="VPBank">
+          <div>
+            <div class="brand-name">VPBank Online</div>
+            <span class="brand-tag">Gói Vay Chuẩn Ngân Hàng</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Vay tín chấp theo lương, gói hộ kinh doanh và mở thẻ tín dụng hạn mức lớn.</div>
-      <a href="LINK_AFFILIATE_VPBANK" target="_blank" class="btn" style="background:#16a34a">Đăng Ký VPBank</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức vay đến</div>
+          <div class="metric-item-val val-highlight">200 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Lãi suất ưu đãi</div>
+          <div class="metric-item-val">Từ 1.1% / tháng</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Vay tín chấp hưởng lương hoặc có hộ kinh doanh cá thể</li>
+        <li><span>✓</span> Lãi suất ngân hàng cạnh tranh, kỳ hạn đến 48 tháng</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_VPBANK" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 8. TPBank -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#f3e8ff; color:#6b21a8">Tiên Phong Bank</span>
-          <div class="card-name">TPBank</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#7c3aed">100 Triệu</div>
+    <!-- 8. TPBANK -->
+    <div class="card" data-cat="the luong">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://tpb.vn/wps/wcm/connect/e1c0702c-74a9-4b13-90d5-3971cbe5eeb6/logo-tpb.svg?MOD=AJPERES" onerror="this.src='https://ui-avatars.com/api/?name=TP&background=7c3aed&color=fff'" class="brand-logo" alt="TPBank">
+          <div>
+            <div class="brand-name">TPBank</div>
+            <span class="brand-tag">Mở Thẻ Hoàn Tiền</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Mở thẻ tín dụng hoàn tiền và gói vay thấu chi tín chấp thủ tục online.</div>
-      <a href="LINK_AFFILIATE_TPBANK" target="_blank" class="btn" style="background:#7c3aed">Đăng Ký TPBank</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">100 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Miễn lãi tối đa</div>
+          <div class="metric-item-val">45 Ngày</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Đăng ký mở thẻ tín dụng hoặc gói vay thấu chi online</li>
+        <li><span>✓</span> Miễn phí thường niên, hoàn tiền mua sắm vượt trội</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_TPBANK" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 9. MB Bank (MBV) -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag">Ngân Hàng Quân Đội</span>
-          <div class="card-name">MB Bank (MBV)</div>
-        </div>
-        <div>
-          <div class="limit-label">Cấp hạn mức</div>
-          <div class="limit-value" style="color:#1d4ed8">Tự Động</div>
+    <!-- 9. MB BANK -->
+    <div class="card" data-cat="luong cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://www.mbbank.com.vn/images/logo.png" onerror="this.src='https://ui-avatars.com/api/?name=MB&background=1e40af&color=fff'" class="brand-logo" alt="MB Bank">
+          <div>
+            <div class="brand-name">MB Bank (MBV)</div>
+            <span class="brand-tag">Ngân Hàng Quân Đội</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Mở tài khoản số đẹp, thẩm định hồ sơ và giải ngân tiền mặt không gặp mặt.</div>
-      <a href="LINK_AFFILIATE_MBBANK" target="_blank" class="btn" style="background:#1d4ed8">Đăng Ký MB Bank</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Cấp hạn mức</div>
+          <div class="metric-item-val val-highlight">Tự Động</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Thủ tục</div>
+          <div class="metric-item-val">Không Gặp Mặt</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Mở tài khoản số tài khoản theo số điện thoại hoàn toàn miễn phí</li>
+        <li><span>✓</span> Tự động chấm điểm phê duyệt khoản vay tiêu dùng ngay trên App</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_MBBANK" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 10. SHB Finance -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#ffedd5; color:#c2410c">Tài Chính SHB</span>
-          <div class="card-name">SHB Finance</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#ea580c">100 Triệu</div>
+    <!-- 10. SHB FINANCE -->
+    <div class="card" data-cat="cccd luong">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://www.shbfinance.com.vn/themes/shbfinance/assets/images/logo.png" onerror="this.src='https://ui-avatars.com/api/?name=SHB&background=ea580c&color=fff'" class="brand-logo" alt="SHB Finance">
+          <div>
+            <div class="brand-name">SHB Finance</div>
+            <span class="brand-tag">Gói Vay Đa Dạng</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Vay theo hóa đơn điện nước, hộ kinh doanh tự do hoặc sao kê ngân hàng.</div>
-      <a href="LINK_AFFILIATE_SHB" target="_blank" class="btn" style="background:#ea580c">Đăng Ký SHB Finance</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">100 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Đối tượng</div>
+          <div class="metric-item-val">Kinh Doanh / Lương</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Hỗ trợ hộ kinh doanh tự do, hóa đơn điện nước hoặc sao kê</li>
+        <li><span>✓</span> Thời gian trả góp linh hoạt từ 6 - 36 tháng</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_SHB" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 11. Home Credit -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#fee2e2; color:#b91c1c">Duyệt Cấp Tốc</span>
-          <div class="card-name">Home Credit</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức đến</div>
-          <div class="limit-value" style="color:#dc2626">100 Triệu</div>
+    <!-- 11. HOME CREDIT -->
+    <div class="card" data-cat="cccd">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Home_Credit_logo.svg" class="brand-logo" alt="Home Credit">
+          <div>
+            <div class="brand-name">Home Credit</div>
+            <span class="brand-tag">Duyệt Trong 10 Phút</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Vay tiêu dùng tín chấp, trả góp linh hoạt từ 6 đến 36 tháng không thế chấp.</div>
-      <a href="LINK_AFFILIATE_HOMECREDIT" target="_blank" class="btn" style="background:#dc2626">Đăng Ký Home Credit</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức đến</div>
+          <div class="metric-item-val val-highlight">100 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Thẩm định</div>
+          <div class="metric-item-val">10 Phút Online</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Vay tiền mặt siêu tốc, không cần chứng minh thu nhập</li>
+        <li><span>✓</span> Kiểm tra hạn mức tức thì chỉ với số CCCD</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_HOMECREDIT" target="_blank" class="btn-apply">ĐĂNG KÝ NGAY</a>
+      </div>
     </div>
 
-    <!-- 12. Ngân Hàng VIB -->
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <span class="card-tag" style="background:#e0f2fe; color:#0369a1">Mở Thẻ Tín Dụng</span>
-          <div class="card-name">Ngân Hàng VIB</div>
-        </div>
-        <div>
-          <div class="limit-label">Hạn mức thẻ đến</div>
-          <div class="limit-value" style="color:#0284c7">200 Triệu</div>
+    <!-- 12. VIB -->
+    <div class="card" data-cat="the luong">
+      <div class="card-header">
+        <div class="brand-left">
+          <img src="https://www.vib.com.vn/wps/wcm/connect/92d99d3e-90cb-46fc-bd13-149fa86daaa7/logo-vib.svg?MOD=AJPERES" onerror="this.src='https://ui-avatars.com/api/?name=VIB&background=0284c7&color=fff'" class="brand-logo" alt="VIB">
+          <div>
+            <div class="brand-name">Ngân Hàng VIB</div>
+            <span class="brand-tag">Vua Thẻ Tín Dụng</span>
+          </div>
         </div>
       </div>
-      <div class="card-desc">✓ Đăng ký mở thẻ online duyệt trong 30 phút, miễn lãi 55 ngày, hoàn tiền cao.</div>
-      <a href="LINK_AFFILIATE_VIB" target="_blank" class="btn" style="background:#0284c7">Mở Thẻ VIB Online</a>
+      <div class="metric-grid">
+        <div>
+          <div class="metric-item-label">Hạn mức thẻ đến</div>
+          <div class="metric-item-val val-highlight">200 Triệu</div>
+        </div>
+        <div>
+          <div class="metric-item-label">Miễn lãi tối đa</div>
+          <div class="metric-item-val">55 Ngày</div>
+        </div>
+      </div>
+      <ul class="feature-list">
+        <li><span>✓</span> Đăng ký mở thẻ 100% online duyệt hạn mức sau 30 phút</li>
+        <li><span>✓</span> Hoàn tiền chi tiêu lên đến 10%, tặng bảo hiểm du lịch</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://zalo.me/0903101248" target="_blank" class="btn-consult">Tư vấn</a>
+        <a href="LINK_AFFILIATE_VIB" target="_blank" class="btn-apply">MỞ THẺ NGAY</a>
+      </div>
     </div>
 
   </main>
 
-  <!-- Nút hỗ trợ Zalo ghim cố định -->
+  <!-- Sticky Hotline/Zalo Support -->
   <footer class="fixed-footer">
     <div class="footer-inner">
-      <a href="https://zalo.me/0903101248" target="_blank" class="btn" style="background:#16a34a">
-        💬 Cần Hỗ Trợ Chọn Gói Vay? Chat Zalo Ngay
+      <a href="https://zalo.me/0903101248" target="_blank" class="btn-zalo-float">
+        💬 Chat Zalo Tư Vấn Miễn Phí (Hỗ Trợ Nợ Xấu & Chọn Gói)
       </a>
     </div>
   </footer>
+
+  <script>
+    function filterLoans(category, element) {
+      // Đổi class active ở thanh tab
+      document.querySelectorAll('.tab-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+
+      // Lọc danh sách thẻ
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          const cats = card.getAttribute('data-cat');
+          if (cats && cats.includes(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
