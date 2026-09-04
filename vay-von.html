@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FinVay - Nền Tảng So Sánh Tài Chính Trực Tuyến</title>
+  <title>Cổng Tổng Hợp & Đăng Ký Gói Vay Trực Tuyến</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: #f8fafc; color: #1e293b; padding-bottom: 110px; }
 
     /* Top Strip */
-    .top-strip { background: #0f172a; color: #94a3b8; font-size: 11px; text-align: center; padding: 9px 12px; }
+    .top-strip { background: #0f172a; color: #94a3b8; font-size: 11.5px; text-align: center; padding: 9px 12px; line-height: 1.4; }
     .top-strip span { color: #f59e0b; font-weight: 700; }
 
-    /* Hero Header Nền Sáng Tinh Tế */
+    /* Hero Header */
     .hero-sec {
       background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      padding: 26px 16px 36px;
+      padding: 24px 16px 32px;
       text-align: center;
       border-bottom: 1px solid #e2e8f0;
     }
@@ -33,11 +33,10 @@
       letter-spacing: 0.5px;
       margin-bottom: 10px;
     }
-    .hero-sec h1 { font-size: 22px; font-weight: 900; line-height: 1.35; color: #0f172a; }
-    .hero-sec h1 span { color: #d97706; }
-    .hero-sec p { font-size: 12px; color: #64748b; margin-top: 6px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+    .hero-sec h1 { font-size: 21px; font-weight: 900; line-height: 1.35; color: #0f172a; }
+    .hero-sec p { font-size: 12.5px; color: #64748b; margin-top: 6px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.5; }
 
-    /* Container */
+    /* Main Wrap */
     .main-wrap { max-width: 500px; margin: -18px auto 0; padding: 0 14px; }
 
     /* Loan Calculator */
@@ -49,15 +48,33 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.04);
       margin-bottom: 16px;
     }
-    .calc-head-tag {
+    .calc-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 14px;
     }
-    .calc-title { font-size: 11.5px; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; }
-    .calc-pill { font-size: 10.5px; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 99px; font-weight: 700; border: 1px solid #a7f3d0; }
+    .calc-title { font-size: 12px; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; }
     
+    /* Nút chọn Dư nợ gốc vs Giảm dần */
+    .calc-tabs { display: flex; background: #f1f5f9; padding: 3px; border-radius: 10px; gap: 4px; }
+    .calc-tab-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .calc-tab-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
     .calc-group { margin-bottom: 14px; }
     .calc-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
     .calc-label { font-size: 12px; color: #64748b; font-weight: 600; }
@@ -86,15 +103,22 @@
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 10px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 12px 14px;
+      margin-top: 10px;
     }
-    .result-text { font-size: 11px; color: #64748b; }
-    .result-number { font-size: 14px; font-weight: 900; color: #059669; }
+    .result-row { display: flex; justify-content: space-between; align-items: center; }
+    .result-text { font-size: 11.5px; color: #64748b; font-weight: 600; }
+    .result-number { font-size: 15px; font-weight: 900; color: #059669; }
+    
+    .calc-disclaimer {
+      font-size: 10.5px;
+      color: #94a3b8;
+      line-height: 1.4;
+      margin-top: 8px;
+      font-style: italic;
+    }
 
-    /* Trust Matrix */
+    /* 4 Ưu điểm nổi bật */
     .trust-matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px; }
     .trust-box {
       background: #ffffff;
@@ -118,7 +142,7 @@
       flex-shrink: 0;
       border: 1px solid #e2e8f0;
     }
-    .trust-info { font-size: 11px; font-weight: 700; color: #334155; line-height: 1.3; }
+    .trust-info { font-size: 11.5px; font-weight: 700; color: #334155; line-height: 1.3; }
 
     /* Mẹo Vay */
     .golden-tip {
@@ -163,7 +187,6 @@
       margin-bottom: 14px;
       border: 1px solid #e2e8f0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      position: relative;
     }
     .badge-float {
       display: inline-block;
@@ -198,7 +221,7 @@
     .brand-tags { display: flex; gap: 6px; margin-top: 3px; }
     .sub-tag { font-size: 10px; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
 
-    /* Lưới Thông Số 2 Cột Nổi Bật */
+    /* Lưới Thông Số 2 Cột */
     .stat-cluster {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -214,7 +237,7 @@
     .stat-big-val { font-size: 17px; font-weight: 900; color: #059669; margin-top: 2px; }
     .stat-mid-val { font-size: 13.5px; font-weight: 800; color: #0f172a; margin-top: 3px; }
 
-    /* Hàng Nút Bấm Kép */
+    /* Hàng Nút Bấm */
     .btn-duo { display: flex; gap: 8px; margin-bottom: 6px; }
     .btn-sub {
       flex: 1;
@@ -229,7 +252,6 @@
       padding: 10px;
       border-radius: 10px;
       border: 1px solid #cbd5e1;
-      transition: background 0.2s;
     }
     .btn-primary {
       flex: 1.4;
@@ -244,9 +266,7 @@
       padding: 10px;
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3);
-      transition: background 0.2s;
     }
-    .btn-primary:active { background: #b45309; }
 
     /* Accordion */
     .accordion-btn {
@@ -275,7 +295,6 @@
     .accordion-box.active { display: block; }
     .alert-red { color: #dc2626; font-weight: 700; }
 
-    /* Empty state */
     .empty-alert { display: none; text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 16px; border: 1px dashed #cbd5e1; margin-bottom: 16px; color: #64748b; font-size: 13px; }
 
     /* Disclosure */
@@ -291,28 +310,33 @@
 </head>
 <body>
 
+  <!-- DẢI CAM KẾT ĐÃ CHUẨN HÓA THEO LUẬT -->
   <div class="top-strip">
-    🛡️ Cam kết <span>100% không thu phí hồ sơ</span> • Minh bạch mọi biểu phí
+    🔒 <b>Bảo mật dữ liệu CCCD</b> • <b>Không thu phí hồ sơ</b> • <b>Hỗ trợ các ngân hàng & công ty tài chính chính thống</b>
   </div>
 
+  <!-- HERO HEADER -->
   <header class="hero-sec">
-    <div class="hero-badge">⚡ NỀN TẢNG DUYỆT VỐN THÔNG MINH</div>
-    <h1>So Sánh Khoản Vay & Thẻ<br><span>Giải Ngân Siêu Tốc</span></h1>
-    <p>Thuật toán tự động khớp hồ sơ tới các ngân hàng và công ty tài chính có tỷ lệ phê duyệt cao nhất.</p>
+    <div class="hero-badge">⚡ HỖ TRỢ TRỰC TUYẾN</div>
+    <h1>Cổng Tổng Hợp & Đăng Ký Gói Vay Trực Tuyến</h1>
+    <p>Tổng hợp các gói vay, mở thẻ tín dụng duyệt nhanh từ các ngân hàng và tổ chức tài chính uy tín.</p>
   </header>
 
   <main class="main-wrap">
 
-    <!-- 1. BỘ TÍNH TOÁN KHOẢN VAY -->
+    <!-- BỘ TÍNH TOÁN DỰ TOÁN KHOẢN VAY CHUYÊN SÂU -->
     <div class="calc-card">
-      <div class="calc-head-tag">
+      <div class="calc-head">
         <span class="calc-title">Dự toán khoản vay</span>
-        <span class="calc-pill">Lãi suất ưu đãi từ 1.2%</span>
+        <div class="calc-tabs">
+          <button class="calc-tab-btn active" id="tabFlat" onclick="setCalcMethod('flat')">Dư nợ gốc</button>
+          <button class="calc-tab-btn" id="tabReduce" onclick="setCalcMethod('reduce')">Dư nợ giảm dần</button>
+        </div>
       </div>
 
       <div class="calc-group">
         <div class="calc-label-row">
-          <span class="calc-label">Số tiền mong muốn:</span>
+          <span class="calc-label">Số tiền cần vay:</span>
           <span class="calc-val" id="dispAmount">10.000.000 đ</span>
         </div>
         <input type="range" id="rangeAmount" min="1000000" max="100000000" step="1000000" value="10000000" oninput="updateCalculator()">
@@ -327,37 +351,42 @@
       </div>
 
       <div class="calc-result-box">
-        <span class="result-text">Gốc + lãi tạm tính mỗi tháng:</span>
-        <span class="result-number" id="dispMonthly">~953.333 đ/tháng</span>
+        <div class="result-row">
+          <span class="result-text" id="dispMethodLabel">Ước tính trả mỗi tháng (cố định):</span>
+          <span class="result-number" id="dispMonthly">~953.333 đ/tháng</span>
+        </div>
+        <div class="calc-disclaimer">
+          ⚠️ Lưu ý: Bảng tính mang tính chất tham khảo để dự toán chi phí. Số tiền chi trả và biểu phí chính xác sẽ theo hợp đồng phê duyệt cụ thể từ tổ chức cho vay.
+        </div>
       </div>
     </div>
 
-    <!-- 2. LƯỚI NIỀM TIN -->
+    <!-- 4 ƯU ĐIỂM NỔI BẬT THEO ĐÚNG YÊU CẦU -->
     <div class="trust-matrix">
       <div class="trust-box">
-        <div class="trust-ico">⚡</div>
-        <div class="trust-info">Duyệt tự động 24/7 online</div>
-      </div>
-      <div class="trust-box">
-        <div class="trust-ico">🎁</div>
-        <div class="trust-info">0% lãi khoản đầu</div>
-      </div>
-      <div class="trust-box">
         <div class="trust-ico">🪪</div>
-        <div class="trust-info">Chỉ cần CCCD gắn chip</div>
+        <div class="trust-info">Hồ sơ chỉ cần CCCD</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-ico">⚡</div>
+        <div class="trust-info">Phê duyệt tự động</div>
       </div>
       <div class="trust-box">
         <div class="trust-ico">🔒</div>
-        <div class="trust-info">Không gọi người thân</div>
+        <div class="trust-info">Không thẩm định người thân</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-ico">🎁</div>
+        <div class="trust-info">Lãi suất ưu đãi, hạn mức cao</div>
       </div>
     </div>
 
-    <!-- 3. MẸO DUYỆT -->
+    <!-- MẸO DUYỆT -->
     <div class="golden-tip">
-      💡 <b>Chiến lược nâng tỷ lệ duyệt lên 95%:</b> Hãy đăng ký cùng lúc từ <b>2 - 3 gói khác nhau</b> để tối ưu cơ hội nhận hạn mức giải ngân ngay trong ngày!
+      💡 <b>Mẹo đạt tỷ lệ duyệt cao:</b> Hãy đăng ký cùng lúc từ <b>2 - 3 gói khác nhau</b> để tối ưu hóa cơ hội nhận hạn mức giải ngân ngay trong ngày!
     </div>
 
-    <!-- 4. TAB BỘ LỌC -->
+    <!-- TAB BỘ LỌC -->
     <div class="filter-scroll">
       <button class="tab-item active" onclick="filterFin('all', this)">Tất cả gói</button>
       <button class="tab-item" onclick="filterFin('vaynhanh', this)">Vay nhanh CCCD</button>
@@ -371,7 +400,7 @@
       Không tìm thấy sản phẩm trong mục đã chọn.
     </div>
 
-    <!-- ==================== DANH SÁCH 12 SẢN PHẨM ==================== -->
+    <!-- ==================== DANH SÁCH SẢN PHẨM ==================== -->
 
     <!-- 1. VPBANK VAY TÍN CHẤP -->
     <div class="fin-card" data-cat="vaynhanh hancaovay luong">
@@ -582,7 +611,7 @@
       </div>
     </div>
 
-    <!-- 6. THÈ TÍN DỤNG TPBANK EVO -->
+    <!-- 6. THẺ TÍN DỤNG TPBANK EVO -->
     <div class="fin-card" data-cat="the vaynhanh">
       <span class="badge-float badge-emerald">Mở Thẻ Online 10 Phút eKYC</span>
       <div class="brand-meta">
@@ -824,12 +853,12 @@
         <span>Xem điều kiện chi tiết</span> ▾
       </div>
       <div class="accordion-box">
-        <p>• Hệ thống AI tự quét điểm tín nhiệm và đề xuất gói vay dễ đậu nhất.</p>
+        <p>• Hệ thống tự quét điểm tín nhiệm và đề xuất gói vay dễ đậu nhất.</p>
         <p>• Không gọi thẩm định người thân hay cơ quan công tác.</p>
       </div>
     </div>
 
-    <!-- 5. MINH HỌA KHOẢN VAY & TUYÊN BỐ PHÁP LÝ -->
+    <!-- MINH HỌA KHOẢN VAY & PHÁP LÝ -->
     <section class="legal-sec">
       <div class="legal-title">📖 Mô Phỏng Nghĩa Vụ Tài Chính Chuẩn Quy Định</div>
       <div class="calc-demo">
@@ -840,10 +869,10 @@
       </div>
       <div class="legal-title">⚖️ Tuyên Bố Miễn Trừ Trách Nhiệm</div>
       <p>
-        FinVay là nền tảng số hóa trung lập hỗ trợ tra cứu, so sánh thông tin các dịch vụ tài chính ngân hàng được cấp phép hợp pháp bởi Ngân hàng Nhà nước Việt Nam.
+        Website là cổng thông tin hỗ trợ tổng hợp và kết nối đăng ký các dịch vụ tài chính ngân hàng được cấp phép hoạt động bởi Ngân hàng Nhà nước Việt Nam.
       </p>
       <p style="margin-top: 4px;">
-        Trang web <b>không đóng vai trò bên cho vay trực tiếp</b> và <b>tuyệt đối không thu bất kỳ khoản tiền hay phí môi giới nào</b> từ người nộp đơn. Quyết định duyệt hạn mức, giải ngân và lãi suất cuối cùng thuộc thẩm quyền của đơn vị cung ứng dịch vụ.
+        Trang web <b>không phải là đơn vị trực tiếp cấp tín dụng</b> và <b>tuyệt đối không thu bất kỳ khoản phí môi giới nào</b> từ khách hàng. Quyết định duyệt hạn mức, giải ngân và biểu phí cuối cùng thuộc thẩm quyền của đơn vị cho vay.
       </p>
     </section>
 
@@ -859,6 +888,15 @@
   </footer>
 
   <script>
+    let calcMethod = 'flat'; // Mặc định 'flat' (dư nợ gốc) hoặc 'reduce' (giảm dần)
+
+    function setCalcMethod(method) {
+      calcMethod = method;
+      document.getElementById('tabFlat').classList.toggle('active', method === 'flat');
+      document.getElementById('tabReduce').classList.toggle('active', method === 'reduce');
+      updateCalculator();
+    }
+
     function updateCalculator() {
       const amount = parseInt(document.getElementById('rangeAmount').value);
       const tenure = parseInt(document.getElementById('rangeTenure').value);
@@ -867,10 +905,21 @@
       document.getElementById('dispTenure').innerText = tenure + ' Tháng';
 
       const monthlyPrincipal = amount / tenure;
-      const monthlyInterest = amount * 0.012;
-      const totalMonthly = Math.round(monthlyPrincipal + monthlyInterest);
+      const rate = 0.012; // Lãi suất tham khảo 1.2%/tháng
 
-      document.getElementById('dispMonthly').innerText = '~' + totalMonthly.toLocaleString('vi-VN') + ' đ/tháng';
+      if (calcMethod === 'flat') {
+        // Dư nợ ban đầu (cố định)
+        const monthlyInterest = amount * rate;
+        const totalMonthly = Math.round(monthlyPrincipal + monthlyInterest);
+        document.getElementById('dispMethodLabel').innerText = 'Ước tính trả mỗi tháng (cố định):';
+        document.getElementById('dispMonthly').innerText = '~' + totalMonthly.toLocaleString('vi-VN') + ' đ/tháng';
+      } else {
+        // Dư nợ giảm dần (hiển thị tháng đầu cao nhất)
+        const firstMonthInterest = amount * rate;
+        const firstMonthTotal = Math.round(monthlyPrincipal + firstMonthInterest);
+        document.getElementById('dispMethodLabel').innerText = 'Tháng đầu cao nhất (giảm dần):';
+        document.getElementById('dispMonthly').innerText = '~' + firstMonthTotal.toLocaleString('vi-VN') + ' đ/tháng';
+      }
     }
 
     function filterFin(cat, btn) {
