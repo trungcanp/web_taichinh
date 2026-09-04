@@ -6,47 +6,47 @@
   <title>FinVay - Nền Tảng So Sánh Tài Chính Trực Tuyến</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #0d131f; color: #f1f5f9; padding-bottom: 110px; }
+    body { background-color: #f8fafc; color: #1e293b; padding-bottom: 110px; }
 
-    /* Top Warning Bar */
-    .top-strip { background: #070a12; color: #94a3b8; font-size: 11px; text-align: center; padding: 9px 12px; border-bottom: 1px solid #1e293b; }
+    /* Top Strip */
+    .top-strip { background: #0f172a; color: #94a3b8; font-size: 11px; text-align: center; padding: 9px 12px; }
     .top-strip span { color: #f59e0b; font-weight: 700; }
 
-    /* Hero Header */
+    /* Hero Header Nền Sáng Tinh Tế */
     .hero-sec {
-      background: radial-gradient(circle at top, #1e293b 0%, #0d131f 100%);
-      padding: 30px 16px 40px;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      padding: 26px 16px 36px;
       text-align: center;
-      position: relative;
+      border-bottom: 1px solid #e2e8f0;
     }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: #fbbf24;
-      padding: 5px 14px;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #b45309;
+      padding: 4px 14px;
       border-radius: 99px;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.5px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    .hero-sec h1 { font-size: 23px; font-weight: 900; line-height: 1.35; color: #ffffff; }
-    .hero-sec h1 span { color: #f59e0b; }
-    .hero-sec p { font-size: 12.5px; color: #94a3b8; margin-top: 8px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+    .hero-sec h1 { font-size: 22px; font-weight: 900; line-height: 1.35; color: #0f172a; }
+    .hero-sec h1 span { color: #d97706; }
+    .hero-sec p { font-size: 12px; color: #64748b; margin-top: 6px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.5; }
 
     /* Container */
-    .main-wrap { max-width: 500px; margin: -20px auto 0; padding: 0 14px; }
+    .main-wrap { max-width: 500px; margin: -18px auto 0; padding: 0 14px; }
 
     /* Loan Calculator */
     .calc-card {
-      background: #161f30;
-      border-radius: 24px;
-      padding: 20px 18px;
-      border: 1px solid #283548;
-      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 18px 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
       margin-bottom: 16px;
     }
     .calc-head-tag {
@@ -55,19 +55,19 @@
       align-items: center;
       margin-bottom: 14px;
     }
-    .calc-title { font-size: 11.5px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; }
-    .calc-pill { font-size: 10.5px; background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 2px 8px; border-radius: 99px; font-weight: 700; }
+    .calc-title { font-size: 11.5px; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; }
+    .calc-pill { font-size: 10.5px; background: #ecfdf5; color: #059669; padding: 2px 8px; border-radius: 99px; font-weight: 700; border: 1px solid #a7f3d0; }
     
-    .calc-group { margin-bottom: 16px; }
-    .calc-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-    .calc-label { font-size: 12px; color: #94a3b8; font-weight: 600; }
-    .calc-val { font-size: 17px; font-weight: 900; color: #f59e0b; }
+    .calc-group { margin-bottom: 14px; }
+    .calc-label-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .calc-label { font-size: 12px; color: #64748b; font-weight: 600; }
+    .calc-val { font-size: 16px; font-weight: 900; color: #d97706; }
     
     input[type=range] {
       width: 100%;
       height: 6px;
       border-radius: 5px;
-      background: #283548;
+      background: #e2e8f0;
       outline: none;
       -webkit-appearance: none;
     }
@@ -76,107 +76,108 @@
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: #f59e0b;
+      background: #d97706;
       cursor: pointer;
-      border: 3px solid #161f30;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5);
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
     }
 
     .calc-result-box {
-      background: #0f1624;
-      border: 1px solid #1e293b;
-      border-radius: 14px;
-      padding: 12px 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .result-text { font-size: 11px; color: #94a3b8; }
-    .result-number { font-size: 15px; font-weight: 900; color: #10b981; }
+    .result-text { font-size: 11px; color: #64748b; }
+    .result-number { font-size: 14px; font-weight: 900; color: #059669; }
 
     /* Trust Matrix */
     .trust-matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px; }
     .trust-box {
-      background: #161f30;
-      border: 1px solid #283548;
-      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
       padding: 10px 12px;
       display: flex;
       align-items: center;
       gap: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
     .trust-ico {
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      background: #0d131f;
+      background: #f8fafc;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 15px;
       flex-shrink: 0;
-      border: 1px solid #283548;
+      border: 1px solid #e2e8f0;
     }
-    .trust-info { font-size: 11.5px; font-weight: 700; color: #e2e8f0; line-height: 1.3; }
+    .trust-info { font-size: 11px; font-weight: 700; color: #334155; line-height: 1.3; }
 
     /* Mẹo Vay */
     .golden-tip {
-      background: linear-gradient(90deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.03) 100%);
+      background: #fffbeb;
       border-left: 3px solid #f59e0b;
-      border-radius: 0 14px 14px 0;
-      padding: 12px 14px;
+      border-radius: 0 12px 12px 0;
+      padding: 11px 14px;
       margin-bottom: 16px;
-      font-size: 12px;
-      color: #cbd5e1;
+      font-size: 11.5px;
+      color: #92400e;
       line-height: 1.5;
     }
-    .golden-tip b { color: #f59e0b; }
+    .golden-tip b { color: #b45309; }
 
     /* Filter Tabs */
-    .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .filter-scroll::-webkit-scrollbar { display: none; }
     .tab-item {
       flex-shrink: 0;
-      background: #161f30;
-      border: 1px solid #283548;
-      padding: 8px 16px;
-      border-radius: 100px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 7px 14px;
+      border-radius: 99px;
       font-size: 12px;
       font-weight: 700;
-      color: #94a3b8;
+      color: #64748b;
       cursor: pointer;
-      transition: all 0.25s;
+      transition: all 0.2s;
     }
     .tab-item.active {
-      background: #f59e0b;
-      color: #0d131f;
-      border-color: #f59e0b;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
     }
 
-    /* Product Card */
+    /* Product Cards */
     .fin-card {
-      background: #161f30;
-      border-radius: 20px;
+      background: #ffffff;
+      border-radius: 18px;
       padding: 16px;
-      margin-bottom: 16px;
-      border: 1px solid #283548;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      margin-bottom: 14px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
       position: relative;
     }
     .badge-float {
       display: inline-block;
       font-size: 10px;
       font-weight: 800;
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 6px;
       margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-    .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .badge-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+    .badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .badge-emerald { background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-rose { background: #ffe4e6; color: #be123c; border: 1px solid #fecdd3; }
 
     .brand-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
     .brand-avatar {
@@ -184,7 +185,7 @@
       height: 48px;
       border-radius: 12px;
       background: #ffffff;
-      border: 1px solid #283548;
+      border: 1px solid #e2e8f0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -193,66 +194,66 @@
       overflow: hidden;
     }
     .brand-avatar img { width: 100%; height: 100%; object-fit: contain; }
-    .brand-info h3 { font-size: 16px; font-weight: 800; color: #ffffff; }
+    .brand-info h3 { font-size: 15px; font-weight: 800; color: #0f172a; }
     .brand-tags { display: flex; gap: 6px; margin-top: 3px; }
-    .sub-tag { font-size: 10px; color: #94a3b8; background: #0d131f; padding: 2px 6px; border-radius: 4px; border: 1px solid #283548; }
+    .sub-tag { font-size: 10px; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
 
-    /* Lưới thông số 2 Cột */
+    /* Lưới Thông Số 2 Cột Nổi Bật */
     .stat-cluster {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      background: #0d131f;
-      border-radius: 14px;
-      border: 1px solid #1e293b;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
       padding: 10px 14px;
       margin-bottom: 14px;
     }
-    .stat-col:first-child { border-right: 1px dashed #283548; padding-right: 10px; }
+    .stat-col:first-child { border-right: 1px dashed #cbd5e1; padding-right: 10px; }
     .stat-col:last-child { padding-left: 14px; }
-    .stat-label-small { font-size: 10.5px; color: #94a3b8; }
-    .stat-big-val { font-size: 18px; font-weight: 900; color: #10b981; margin-top: 2px; }
-    .stat-mid-val { font-size: 14px; font-weight: 800; color: #f1f5f9; margin-top: 4px; }
+    .stat-label-small { font-size: 10px; color: #64748b; }
+    .stat-big-val { font-size: 17px; font-weight: 900; color: #059669; margin-top: 2px; }
+    .stat-mid-val { font-size: 13.5px; font-weight: 800; color: #0f172a; margin-top: 3px; }
 
-    /* Hàng nút bấm kép */
+    /* Hàng Nút Bấm Kép */
     .btn-duo { display: flex; gap: 8px; margin-bottom: 6px; }
     .btn-sub {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1e293b;
-      color: #e2e8f0;
+      background: #f1f5f9;
+      color: #334155;
       text-decoration: none;
       font-size: 12px;
       font-weight: 700;
-      padding: 11px;
+      padding: 10px;
       border-radius: 10px;
-      border: 1px solid #334155;
-      transition: all 0.2s;
+      border: 1px solid #cbd5e1;
+      transition: background 0.2s;
     }
     .btn-primary {
       flex: 1.4;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f59e0b;
-      color: #0d131f;
+      background: #d97706;
+      color: #ffffff;
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 900;
-      padding: 11px;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
-      transition: all 0.2s;
+      box-shadow: 0 3px 10px rgba(217, 119, 6, 0.3);
+      transition: background 0.2s;
     }
-    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary:active { background: #b45309; }
 
-    /* Accordion Toggle */
+    /* Accordion */
     .accordion-btn {
       text-align: center;
-      padding-top: 10px;
-      color: #94a3b8;
-      font-size: 11.5px;
+      padding-top: 8px;
+      color: #64748b;
+      font-size: 11px;
       font-weight: 700;
       cursor: pointer;
       display: flex;
@@ -262,30 +263,30 @@
     }
     .accordion-box {
       display: none;
-      background: #0d131f;
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-top: 10px;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 8px;
       font-size: 11px;
-      color: #94a3b8;
+      color: #475569;
       line-height: 1.6;
-      border: 1px solid #1e293b;
+      border: 1px solid #e2e8f0;
     }
     .accordion-box.active { display: block; }
-    .alert-red { color: #fb7185; font-weight: 700; }
+    .alert-red { color: #dc2626; font-weight: 700; }
 
     /* Empty state */
-    .empty-alert { display: none; text-align: center; padding: 40px 20px; background: #161f30; border-radius: 16px; border: 1px dashed #283548; margin-bottom: 16px; color: #94a3b8; font-size: 13px; }
+    .empty-alert { display: none; text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 16px; border: 1px dashed #cbd5e1; margin-bottom: 16px; color: #64748b; font-size: 13px; }
 
-    /* Disclosure Card */
-    .legal-sec { background: #161f30; border-radius: 18px; padding: 16px; border: 1px solid #283548; font-size: 10.5px; color: #94a3b8; line-height: 1.6; margin-top: 24px; }
-    .legal-title { font-size: 11.5px; font-weight: 800; color: #cbd5e1; margin-bottom: 8px; text-transform: uppercase; }
-    .calc-demo { background: #0d131f; border-left: 3px solid #f59e0b; padding: 10px 12px; border-radius: 0 8px 8px 0; margin: 8px 0 12px; }
+    /* Disclosure */
+    .legal-sec { background: #ffffff; border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; font-size: 10.5px; color: #64748b; line-height: 1.6; margin-top: 20px; }
+    .legal-title { font-size: 11px; font-weight: 800; color: #334155; margin-bottom: 6px; text-transform: uppercase; }
+    .calc-demo { background: #f8fafc; border-left: 3px solid #d97706; padding: 8px 10px; border-radius: 0 8px 8px 0; margin: 8px 0; }
 
-    /* Floating Bar Cuối Màn Hình */
-    .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(13, 19, 31, 0.95); backdrop-filter: blur(10px); padding: 10px 16px; border-top: 1px solid #283548; z-index: 999; }
+    /* Sticky Footer */
+    .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; border-top: 1px solid #e2e8f0; z-index: 999; box-shadow: 0 -4px 16px rgba(0,0,0,0.05); }
     .bottom-wrap { max-width: 500px; margin: 0 auto; }
-    .btn-zalo-fix { display: flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 800; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3); }
+    .btn-zalo-fix { display: flex; align-items: center; justify-content: center; gap: 8px; background: #059669; color: #ffffff; text-decoration: none; padding: 11px; border-radius: 12px; font-size: 13px; font-weight: 800; }
   </style>
 </head>
 <body>
@@ -353,7 +354,7 @@
 
     <!-- 3. MẸO DUYỆT -->
     <div class="golden-tip">
-      💡 <b>Chiến lược nâng tỷ lệ duyệt lên 95%:</b> Hãy đăng ký cùng lúc từ <b>2 - 3 gói khác nhau</b> để tối ưu điểm tín nhiệm và nhận hạn mức giải ngân ngay trong ngày!
+      💡 <b>Chiến lược nâng tỷ lệ duyệt lên 95%:</b> Hãy đăng ký cùng lúc từ <b>2 - 3 gói khác nhau</b> để tối ưu cơ hội nhận hạn mức giải ngân ngay trong ngày!
     </div>
 
     <!-- 4. TAB BỘ LỌC -->
@@ -370,11 +371,11 @@
       Không tìm thấy sản phẩm trong mục đã chọn.
     </div>
 
-    <!-- ==================== DANH SÁCH SẢN PHẨM ==================== -->
+    <!-- ==================== DANH SÁCH 12 SẢN PHẨM ==================== -->
 
     <!-- 1. VPBANK VAY TÍN CHẤP -->
     <div class="fin-card" data-cat="vaynhanh hancaovay luong">
-      <span class="badge-float badge-amber">Phân khúc Ngân Hàng Uy Tín</span>
+      <span class="badge-float badge-amber">Phân khúc Ngân Hàng</span>
       <div class="brand-meta">
         <div class="brand-avatar">
           <img src="vpbank.PNG" alt="VPBank">
@@ -540,7 +541,7 @@
       </div>
     </div>
 
-    <!-- 5. TPBANK VAY TIÊU DÙNG (30 TRIỆU) -->
+    <!-- 5. TPBANK VAY TIÊU DÙNG -->
     <div class="fin-card" data-cat="vaynhanh luong">
       <span class="badge-float badge-amber">Ngân Hàng Tiên Phong - Duyệt 15 Phút</span>
       <div class="brand-meta">
@@ -581,7 +582,7 @@
       </div>
     </div>
 
-    <!-- 6. THẺ TÍN DỤNG TPBANK EVO -->
+    <!-- 6. THÈ TÍN DỤNG TPBANK EVO -->
     <div class="fin-card" data-cat="the vaynhanh">
       <span class="badge-float badge-emerald">Mở Thẻ Online 10 Phút eKYC</span>
       <div class="brand-meta">
@@ -828,7 +829,7 @@
       </div>
     </div>
 
-    <!-- 5. MINH HỌA KHOẢN VAY & PHÁP LÝ -->
+    <!-- 5. MINH HỌA KHOẢN VAY & TUYÊN BỐ PHÁP LÝ -->
     <section class="legal-sec">
       <div class="legal-title">📖 Mô Phỏng Nghĩa Vụ Tài Chính Chuẩn Quy Định</div>
       <div class="calc-demo">
