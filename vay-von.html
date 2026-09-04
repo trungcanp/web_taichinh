@@ -6,7 +6,7 @@
   <title>AlphaLoan Vietnam - Cổng So Sánh Khoản Vay & Mở Thẻ Online</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #f1f5f9; color: #0f172a; padding-bottom: 110px; }
+    body { background-color: #f1f5f9; color: #0f172a; padding-bottom: 115px; }
 
     /* Top Strip */
     .top-strip { background: #0f172a; color: #94a3b8; font-size: 11px; text-align: center; padding: 8px 12px; }
@@ -54,30 +54,49 @@
     .filter-btn { flex-shrink: 0; background: #ffffff; border: 1px solid #cbd5e1; padding: 8px 14px; border-radius: 99px; font-size: 12px; font-weight: 700; color: #475569; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
     .filter-btn.active { background: #0284c7; color: #ffffff; border-color: #0284c7; box-shadow: 0 2px 6px rgba(2,132,199,0.3); }
 
-    /* Product Cards */
-    .loan-card { background: #ffffff; border-radius: 18px; padding: 16px; margin-bottom: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    .loan-head { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; }
-    .brand-cluster { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-frame { width: 48px; height: 48px; border-radius: 12px; background: #ffffff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; padding: 4px; flex-shrink: 0; overflow: hidden; }
+    /* ================= SẢN PHẨM PHONG CÁCH ALPHALOAN ================= */
+    .loan-card { background: #ffffff; border-radius: 18px; overflow: hidden; margin-bottom: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+    
+    /* Dải Ribbon màu xanh phía trên thẻ */
+    .card-top-tag { background: #3b827e; color: #ffffff; padding: 7px 14px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.2px; }
+    .tag-green-light { background: #2f855a; }
+    .tag-orange { background: #c2410c; }
+    
+    .card-body { padding: 14px 16px 16px; }
+    .loan-head { display: flex; align-items: center; gap: 12px; }
+    .brand-logo-frame { width: 50px; height: 50px; border-radius: 12px; background: #ffffff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; padding: 4px; flex-shrink: 0; overflow: hidden; }
     .brand-logo-frame img { width: 100%; height: 100%; object-fit: contain; }
-    .brand-title { font-size: 15px; font-weight: 800; color: #0f172a; }
-    .brand-subtag { display: inline-block; font-size: 10px; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; margin-top: 2px; }
-    .tag-highlight { background: #fee2e2; color: #dc2626; }
-    .tag-green { background: #d1fae5; color: #059669; }
+    .brand-title { font-size: 15.5px; font-weight: 800; color: #0f172a; line-height: 1.2; }
+    
+    /* Nhãn đặc tính nhỏ */
+    .feature-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+    .pill { font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; background: #f1f5f9; color: #475569; }
 
-    .stat-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0; background: #f8fafc; padding: 10px 8px; border-radius: 12px; text-align: center; }
+    /* Lưới thông số chính */
+    .stat-matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0 10px; background: #f8fafc; padding: 10px 8px; border-radius: 12px; text-align: center; }
     .stat-caption { font-size: 10px; color: #64748b; font-weight: 500; }
-    .stat-data { font-size: 13px; font-weight: 800; color: #0f172a; margin-top: 2px; }
-    .stat-highlight { color: #e11d48; }
+    .stat-data { font-size: 13.5px; font-weight: 800; color: #0f172a; margin-top: 2px; }
+    .stat-highlight { color: #2f855a; font-weight: 900; }
 
-    .bullet-list { list-style: none; margin-bottom: 14px; }
-    .bullet-list li { font-size: 11px; color: #475569; margin-bottom: 4px; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
-    .bullet-list li span { color: #10b981; font-weight: bold; flex-shrink: 0; }
+    /* Hàng hiển thị Duyệt vay đến & Lãi suất từ */
+    .loan-quick-spec { display: flex; justify-content: space-between; align-items: center; padding: 6px 4px 10px; border-bottom: 1px dashed #e2e8f0; margin-bottom: 12px; }
+    .spec-group { font-size: 12px; color: #475569; }
+    .spec-group b { font-size: 14px; color: #0f172a; }
+    .spec-group .val-green { color: #2f855a; font-size: 15px; font-weight: 900; }
+
+    /* Cặp nút hành động kép chuẩn Alphaloan */
+    .action-group { display: flex; flex-direction: column; gap: 8px; }
+    .btn-check-rate { display: block; text-align: center; text-decoration: none; background: #529b7a; color: #ffffff; font-weight: 800; font-size: 12.5px; padding: 10px; border-radius: 8px; transition: background 0.2s; }
+    .btn-check-rate:active { background: #3d785e; }
+    .btn-apply-main { display: block; text-align: center; text-decoration: none; background: #f59e0b; color: #ffffff; font-weight: 800; font-size: 13px; padding: 11px; border-radius: 8px; box-shadow: 0 3px 10px rgba(245,158,11,0.3); }
+    .btn-apply-main:active { background: #d97706; }
+
+    /* Khối Chi tiết Accordion có thể ẩn hiện */
+    .details-toggle { display: flex; align-items: center; justify-content: center; gap: 4px; padding-top: 10px; margin-top: 10px; cursor: pointer; color: #64748b; font-size: 11.5px; font-weight: 700; border-top: 1px solid #f1f5f9; }
+    .details-content { display: none; margin-top: 10px; padding: 12px; background: #f8fafc; border-radius: 10px; font-size: 11px; color: #475569; line-height: 1.5; border: 1px solid #edf2f7; }
+    .details-content.active { display: block; }
+    .feature-tag-box { display: inline-flex; align-items: center; gap: 4px; background: #2563eb; color: #ffffff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-bottom: 6px; }
     .alert-noxau { color: #dc2626; font-weight: 700; }
-
-    .action-row { display: flex; gap: 8px; }
-    .btn-get-loan { flex: 2; display: block; text-align: center; text-decoration: none; background: #f97316; color: #ffffff; font-weight: 800; font-size: 13px; padding: 11px; border-radius: 10px; box-shadow: 0 3px 10px rgba(249,115,22,0.3); }
-    .btn-chat { flex: 1; display: block; text-align: center; text-decoration: none; background: #f1f5f9; color: #334155; font-weight: 700; font-size: 12px; padding: 11px; border-radius: 10px; border: 1px solid #cbd5e1; }
 
     /* Empty state */
     .empty-state { display: none; text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 16px; border: 1px dashed #cbd5e1; margin-bottom: 16px; }
@@ -162,17 +181,17 @@
       </div>
     </div>
 
-    <!-- 4. TABS BỘ LỌC -->
+    <!-- 4. TABS BỘ LỌC THỰC CHIẾN -->
     <div class="filter-tabs">
       <button class="filter-btn active" onclick="applyFilter('all', this)">Tất cả</button>
-      <button class="filter-btn" onclick="applyFilter('cccd', this)">Vay nhanh chỉ cần CCCD</button>
-      <button class="filter-btn" onclick="applyFilter('luong', this)">Vay lương</button>
+      <button class="filter-btn" onclick="applyFilter('vaynhanh', this)">Vay nhanh CCCD</button>
+      <button class="filter-btn" onclick="applyFilter('hancaovay', this)">Vay hạn mức cao</button>
       <button class="filter-btn" onclick="applyFilter('noxau', this)">Hỗ trợ nợ xấu</button>
-      <button class="filter-btn" onclick="applyFilter('the', this)">Thẻ tín dụng</button>
-      <button class="filter-btn" onclick="applyFilter('taikhoan', this)">Mở tài khoản</button>
+      <button class="filter-btn" onclick="applyFilter('luong', this)">Vay theo lương</button>
+      <button class="filter-btn" onclick="applyFilter('the', this)">Thẻ & Tài khoản</button>
     </div>
 
-    <!-- Empty State -->
+    <!-- Empty State khi không khớp danh mục -->
     <div class="empty-state" id="emptyState">
       <p>Hiện chưa có sản phẩm phù hợp trong danh mục này.</p>
     </div>
@@ -180,452 +199,647 @@
     <!-- ==================== DANH SÁCH SẢN PHẨM ==================== -->
 
     <!-- 1. VPBANK VAY TÍN CHẤP -->
-    <div class="loan-card" data-cat="cccd luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh hancaovay luong">
+      <div class="card-top-tag">Dễ tiếp cận nhất trong phân khúc ngân hàng</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="vpbank.PNG" alt="VPBank" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/6/69/VPBank_logo.svg&w=120&output=png'">
           </div>
           <div>
-            <div class="brand-title">VPBank Vay Tín Chấp</div>
-            <span class="brand-subtag tag-green">Phân khúc Ngân hàng</span>
+            <div class="brand-title">VPBank Vay tín chấp</div>
+            <div class="feature-pills">
+              <span class="pill">Hạn mức cao</span>
+              <span class="pill">Lãi suất thấp</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">200 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Độ tuổi yêu cầu</div>
+            <div class="stat-data">Từ 23 Tuổi</div>
+          </div>
+          <div>
+            <div class="stat-caption">Hình thức</div>
+            <div class="stat-data">Online 100%</div>
+          </div>
+          <div>
+            <div class="stat-caption">Tài sản đảm bảo</div>
+            <div class="stat-data">Không cần</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">16% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">200 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>16% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Độ tuổi yêu cầu</div>
-          <div class="stat-data">Từ 23 Tuổi</div>
+
+        <div class="action-group">
+          <a href="https://shorten.asia/xeyp9Dnh" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://shorten.asia/xeyp9Dnh" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Không chứng minh thu nhập hay tài sản đảm bảo, chỉ cần CCCD gắn chip hoặc CCCD có mã vạch</li>
-        <li><span>✓</span> Duyệt và giải ngân online 100% khoản vay từ 20 - 200 triệu</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://shorten.asia/xeyp9Dnh" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• <b>KHÔNG</b> chứng minh thu nhập hay tài sản đảm bảo.</p>
+          <p>• Chỉ cần CCCD gắn chip hoặc CCCD có mã vạch còn hiệu lực.</p>
+          <p>• Duyệt và giải ngân trực tuyến khoản vay từ 20 - 200 triệu.</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách hàng có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 2. CATHAY UNITED BANK -->
-    <div class="loan-card" data-cat="cccd">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh">
+      <div class="card-top-tag">Online 100% chỉ cần CCCD</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="cathay.PNG" alt="Cathay United Bank" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/96/Cathay_United_Bank_logo.svg&w=120&output=png'">
           </div>
           <div>
-            <div class="brand-title">Cathay United Bank</div>
-            <span class="brand-subtag">Online 100% chỉ cần CCCD</span>
+            <div class="brand-title">Cathay United Bank Vay tín chấp</div>
+            <div class="feature-pills">
+              <span class="pill">Không bảng lương</span>
+              <span class="pill">Chỉ cần CMND/CCCD</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">40 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Ước tính trả/tháng</div>
+            <div class="stat-data">3.73 Triệu</div>
+          </div>
+          <div>
+            <div class="stat-caption">Phí xử lý</div>
+            <div class="stat-data">0 Đồng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Tối thiểu</div>
+            <div class="stat-data">22 Tuổi</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">40% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">40 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>40% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Phí xử lý hồ sơ</div>
-          <div class="stat-data">0 Đồng</div>
+
+        <div class="action-group">
+          <a href="https://aff.cnext.vn/fin/VPB_UPL/C251100002" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://aff.cnext.vn/fin/VPB_UPL/C251100002" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Đăng ký chỉ với CCCD qua app Cathay Bank, tuổi từ 22, không cần bảng lương</li>
-        <li><span>✓</span> Không bảo hiểm khoản vay, không thu phí xử lý thẩm định</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://aff.cnext.vn/fin/VPB_UPL/C251100002" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Đăng ký hoàn toàn qua Ứng dụng Cathay Bank, không gặp mặt.</p>
+          <p>• Không thu phí bảo hiểm khoản vay, không phí xử lý thẩm định.</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách hàng có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 3. F88 VAY CẦM CỐ GIẤY TỜ XE -->
-    <div class="loan-card" data-cat="cccd noxau">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh hancaovay noxau">
+      <div class="card-top-tag tag-green-light">Vay qua Cà Vẹt xe - Hỗ trợ nợ xấu</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="https://wsrv.nl/?url=https://f88.vn/images/logo.svg&w=100&output=png" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/OCB_logo.svg/320px-OCB_logo.svg.png'" alt="F88">
           </div>
           <div>
-            <div class="brand-title">F88 Vay Cầm Cố Xe</div>
-            <span class="brand-subtag tag-green">Vay Cà Vẹt - Hỗ Trợ Nợ Xấu</span>
+            <div class="brand-title">F88 Vay cầm cố giấy tờ xe máy / ô tô</div>
+            <div class="feature-pills">
+              <span class="pill">Không chứng minh thu nhập</span>
+              <span class="pill">Duyệt cấp tốc 24h</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">2 Tỷ</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Ước tính trả/tháng</div>
+            <div class="stat-data">3.65 Triệu</div>
+          </div>
+          <div>
+            <div class="stat-caption">Phí xử lý</div>
+            <div class="stat-data">19.2%</div>
+          </div>
+          <div>
+            <div class="stat-caption">Giải ngân</div>
+            <div class="stat-data">15 Phút</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">55% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">2 Tỷ</span></div>
+          <div class="spec-group">Lãi suất từ: <b>55% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Thời gian có tiền</div>
-          <div class="stat-data">15 Phút</div>
+
+        <div class="action-group">
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Mức vay lên tới 2 tỷ với đăng ký ô tô (hoặc đăng ký xe máy), xe vẫn có để đi lại</li>
-        <li><span>✓</span> Duyệt cấp tốc trong 15 - 30 phút, hỗ trợ khách hàng có nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Mức vay lên tới 2 tỷ đồng với đăng ký ô tô, hoặc đến 30 triệu với xe máy.</p>
+          <p>• <b>Vừa có tiền vừa có xe đi</b>, chỉ giữ đăng ký (cà vẹt) xe bản gốc.</p>
+          <p>• Có tiền giải ngân mặt sau 15 phút, chấp nhận khách có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
-    <!-- 4. HOME CREDIT ONLINE -->
-    <div class="loan-card" data-cat="cccd">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <!-- 4. HOME CREDIT VAY NHANH ONLINE -->
+    <div class="loan-card" data-cat="vaynhanh hancaovay">
+      <div class="card-top-tag">Xét duyệt online chỉ trong 3 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="homecredit.png" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/e/ea/Home_Credit_logo.svg&w=100&output=png'" alt="Home Credit">
           </div>
           <div>
-            <div class="brand-title">Home Credit Vay Nhanh</div>
-            <span class="brand-subtag">Xét Duyệt Online 3 Phút</span>
+            <div class="brand-title">Home Credit Vay nhanh online</div>
+            <div class="feature-pills">
+              <span class="pill">Thủ tục đơn giản</span>
+              <span class="pill">Chỉ cần CMND/CCCD</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">250 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Ước tính trả/tháng</div>
+            <div class="stat-data">3.49 Triệu</div>
+          </div>
+          <div>
+            <div class="stat-caption">Thời gian vay đến</div>
+            <div class="stat-data">57 Tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Nhận tiền</div>
+            <div class="stat-data">Sau 10 Phút</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">16.22% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">250 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>16.22% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Thời gian vay đến</div>
-          <div class="stat-data">57 Tháng</div>
+
+        <div class="action-group">
+          <a href="https://shorten.asia/rE9v9C84" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://shorten.asia/rE9v9C84" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Chỉ cần CCCD với khoản vay dưới 100 triệu, xét duyệt online 3 phút, nhận tiền sau 10 phút</li>
-        <li><span>✓</span> Yêu cầu: Khách hàng cũ đã từng mua trả góp hoặc vay tại Home Credit</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://shorten.asia/rE9v9C84" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Chỉ cần ảnh chụp CCCD đối với khoản vay dưới 100 triệu đồng.</p>
+          <p>• <b>Yêu cầu:</b> Khách hàng cũ đã TỪNG mua trả góp hoặc vay tiền tại Home Credit.</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách hàng có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 5. CAKE BY VPBANK -->
-    <div class="loan-card" data-cat="cccd taikhoan the">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh the">
+      <div class="card-top-tag">Chỉ cần CCCD - Phê duyệt 2 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="cake.png" onerror="this.src='https://wsrv.nl/?url=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/31/3e/67/313e6709-3221-ca41-2a62-fa56e43f558a/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg&w=100&output=png'" alt="Cake">
           </div>
           <div>
-            <div class="brand-title">CAKE Vay Nhanh</div>
-            <span class="brand-subtag">Chỉ cần CCCD</span>
+            <div class="brand-title">CAKE Vay nhanh</div>
+            <div class="feature-pills">
+              <span class="pill">Đăng ký online</span>
+              <span class="pill">Không thẩm định</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">50 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Ước tính trả/tháng</div>
+            <div class="stat-data">3.68 Triệu</div>
+          </div>
+          <div>
+            <div class="stat-caption">Lương tối thiểu</div>
+            <div class="stat-data">5 Triệu/tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Phê duyệt</div>
+            <div class="stat-data">2 Phút</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">35% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">50 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>35% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Phê duyệt</div>
-          <div class="stat-data">Trong 2 Phút</div>
+
+        <div class="action-group">
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Đăng ký 100% online chỉ với CCCD, lương tối thiểu 5 triệu/tháng (không cần chứng minh)</li>
-        <li><span>✓</span> Thủ tục đơn giản trực tiếp trên ứng dụng Cake by VPBank</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Đăng ký 100% Online chỉ với CCCD qua app Ngân hàng số Cake by VPBank.</p>
+          <p>• Lương khai báo từ 5 triệu đồng/tháng (không bắt nộp sao kê rườm rà).</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 6. SHB FINANCE -->
-    <div class="loan-card" data-cat="cccd luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh luong">
+      <div class="card-top-tag">Chỉ cần CCCD gắn chip</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="shb.png" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_SHB.svg&w=120&output=png'" alt="SHB Finance">
           </div>
           <div>
-            <div class="brand-title">SHBFinance Vay Nhanh</div>
-            <span class="brand-subtag">Chỉ cần CCCD</span>
+            <div class="brand-title">SHBFinance Vay nhanh</div>
+            <div class="feature-pills">
+              <span class="pill">Vay tiền mặt</span>
+              <span class="pill">Thủ tục gọn</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">100 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Lương tối thiểu</div>
+            <div class="stat-data">3 Triệu/tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Phí bảo hiểm</div>
+            <div class="stat-data">7.5%</div>
+          </div>
+          <div>
+            <div class="stat-caption">Kỳ hạn</div>
+            <div class="stat-data">6 - 36 Tháng</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">29% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">100 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>29% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Lương tối thiểu</div>
-          <div class="stat-data">3 Triệu/tháng</div>
+
+        <div class="action-group">
+          <a href="https://appay.cloudcms.vn/finance/shb_leadgen_direct/onboarding?code=7215815" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://appay.cloudcms.vn/finance/shb_leadgen_direct/onboarding?code=7215815" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Gói vay từ 20 - 30 triệu đổ lại chỉ cần ảnh CCCD, không thế chấp</li>
-        <li><span>✓</span> Cung cấp thêm giấy tờ để tăng hạn mức vay lên đến 100 triệu</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://appay.cloudcms.vn/finance/shb_leadgen_direct/onboarding?code=7215815" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Khoản vay 20 - 30 triệu đồng đổ lại chỉ cần CCCD bản gốc.</p>
+          <p>• Cung cấp thêm bảo hiểm y tế, sao kê hoặc hóa đơn để nâng hạn mức tới 100 triệu.</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách hàng có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 7. LOTTE FINANCE -->
-    <div class="loan-card" data-cat="luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="hancaovay luong">
+      <div class="card-top-tag tag-green-light">Lãi suất ưu đãi cho cán bộ nhà nước</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/4/46/Lotte_logo.svg&w=120&output=png" alt="Lotte Finance">
           </div>
           <div>
-            <div class="brand-title">Lotte Finance Tín Chấp</div>
-            <span class="brand-subtag tag-green">Ưu Đãi Cán Bộ Nhà Nước</span>
+            <div class="brand-title">Lotte Finance Vay tín chấp</div>
+            <div class="feature-pills">
+              <span class="pill">Lãi suất thấp</span>
+              <span class="pill">Vay tín chấp lương</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Duyệt vay đến</div>
-          <div class="stat-data stat-highlight">500 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Lương tối thiểu</div>
+            <div class="stat-data">4 Triệu/tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Thời hạn vay</div>
+            <div class="stat-data">Đến 60 Tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Nguồn vốn</div>
+            <div class="stat-data">Hàn Quốc</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất từ</div>
-          <div class="stat-data">18% / năm</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Duyệt vay đến: <span class="val-green">500 Triệu</span></div>
+          <div class="spec-group">Lãi suất từ: <b>18% / năm</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Lương tối thiểu</div>
-          <div class="stat-data">4 Triệu/tháng</div>
+
+        <div class="action-group">
+          <a href="https://shorten.asia/e3suTWqJ" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://shorten.asia/e3suTWqJ" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Vay theo lương, bảo hiểm nhân thọ hoặc hạn mức hợp đồng tín dụng khác (LSTD)</li>
-        <li><span>✓</span> Hạn mức tối đa lên tới 500 triệu đồng với mức lãi suất thấp</li>
-        <li><span>⚠️</span> <b class="alert-noxau">Lưu ý:</b> KHÔNG hỗ trợ khách có lịch sử nợ xấu</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://shorten.asia/e3suTWqJ" target="_blank" class="btn-get-loan">ĐĂNG KÝ NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Vay qua bảng lương công ty, bảo hiểm nhân thọ hoặc hợp đồng tín chấp khác (LSTD).</p>
+          <p>• Hạn mức cực cao lên tới nửa tỷ đồng với lãi suất bình quân ưu đãi.</p>
+          <p class="alert-noxau">• Lưu ý: KHÔNG hỗ trợ khách hàng có lịch sử nợ xấu.</p>
+        </div>
       </div>
     </div>
 
     <!-- 8. FE CREDIT -->
-    <div class="loan-card" data-cat="cccd luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh luong">
+      <div class="card-top-tag tag-orange">Ưu đãi lãi suất - Giải ngân 30 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="fe.JPG" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/FE_Credit_logo.svg/320px-FE_Credit_logo.svg.png'" alt="FE Credit">
           </div>
           <div>
-            <div class="brand-title">FE Credit Online</div>
-            <span class="brand-subtag tag-highlight">Ưu Đãi Lãi Suất</span>
+            <div class="brand-title">Công ty Tài chính FE CREDIT</div>
+            <div class="feature-pills">
+              <span class="pill">Duyệt online</span>
+              <span class="pill">Thủ tục đơn giản</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Hạn mức đến</div>
-          <div class="stat-data stat-highlight">100 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Kỳ hạn vay</div>
+            <div class="stat-data">6 - 36 Tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Giải ngân</div>
+            <div class="stat-data">30 Phút</div>
+          </div>
+          <div>
+            <div class="stat-caption">Độ tuổi</div>
+            <div class="stat-data">20 - 60 Tuổi</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất chỉ từ</div>
-          <div class="stat-data stat-highlight">1.42% / tháng</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Hạn mức tối đa: <span class="val-green">100 Triệu</span></div>
+          <div class="spec-group">Lãi suất tháng: <b>1.42% / tháng</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Thời gian duyệt</div>
-          <div class="stat-data">30 Phút</div>
+
+        <div class="action-group">
+          <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Kỳ hạn từ 6 - 36 tháng, giải ngân tự động qua tài khoản ATM</li>
-        <li><span>✓</span> Độ tuổi 20 - 60 tuổi, thu nhập từ 3 triệu/tháng (hỗ trợ cả khách đang vay tại FE)</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-get-loan">NHẬN TIỀN NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Yêu cầu thu nhập tối thiểu từ 3 triệu đồng/tháng.</p>
+          <p>• Hỗ trợ cả khách hàng đang có khoản vay hiện hữu tại FE Credit.</p>
+          <p>• Nhận tiền giải ngân về mọi thẻ ATM nội địa 24/7.</p>
+        </div>
       </div>
     </div>
 
-    <!-- 9. TPBANK (VAY TIÊU DÙNG) -->
-    <div class="loan-card" data-cat="cccd luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <!-- 9. TPBANK (VAY TIÊU DÙNG 30 TRIỆU) -->
+    <div class="loan-card" data-cat="vaynhanh luong">
+      <div class="card-top-tag">Ngân hàng số - Giải ngân 15 - 30 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="tpbank.JPG" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/TPBank_logo.svg/320px-TPBank_logo.svg.png'" alt="TPBank">
           </div>
           <div>
-            <div class="brand-title">TPBank Vay Tiêu Dùng</div>
-            <span class="brand-subtag">Ngân Hàng Tiên Phong</span>
+            <div class="brand-title">Ngân hàng TPBank (Vay Tiêu Dùng)</div>
+            <div class="feature-pills">
+              <span class="pill">Vay nhanh</span>
+              <span class="pill">Kỳ hạn 12 - 24 tháng</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Hạn mức đến</div>
-          <div class="stat-data stat-highlight">30 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Độ tuổi</div>
+            <div class="stat-data">20 - 54 Tuổi</div>
+          </div>
+          <div>
+            <div class="stat-caption">Kỳ hạn</div>
+            <div class="stat-data">12 - 24 Tháng</div>
+          </div>
+          <div>
+            <div class="stat-caption">Giải ngân</div>
+            <div class="stat-data">15 - 30 Phút</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất tháng</div>
-          <div class="stat-data">2.17% / tháng</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Hạn mức tối đa: <span class="val-green">30 Triệu</span></div>
+          <div class="spec-group">Lãi suất tháng: <b>2.17% / tháng</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Giải ngân</div>
-          <div class="stat-data">15 - 30 Phút</div>
+
+        <div class="action-group">
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Kỳ hạn linh hoạt 12 - 24 tháng, thanh toán giảm tải theo tháng</li>
-        <li><span>✓</span> Điều kiện: 20 - 54 tuổi, thủ tục chỉ cần CCCD/CMND còn hạn</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-get-loan">ĐĂNG KÝ VAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Khách hàng là công dân Việt Nam từ 20 đến 54 tuổi.</p>
+          <p>• Hồ sơ: CCCD/CMND còn hiệu lực theo quy định ngân hàng.</p>
+        </div>
       </div>
     </div>
 
     <!-- 10. MCREDIT -->
-    <div class="loan-card" data-cat="cccd luong">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh">
+      <div class="card-top-tag">Giải ngân siêu tốc 5 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="https://wsrv.nl/?url=https://mcredit.com.vn/assets/images/logo.png&w=120" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/OCB_logo.svg/320px-OCB_logo.svg.png'" alt="MCredit">
           </div>
           <div>
-            <div class="brand-title">Tài Chính MCredit</div>
-            <span class="brand-subtag">Thành Viên MB Bank</span>
+            <div class="brand-title">Công ty Tài chính MCredit</div>
+            <div class="feature-pills">
+              <span class="pill">Thủ tục đơn giản</span>
+              <span class="pill">Chỉ cần CCCD gắn chip</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Hạn mức đến</div>
-          <div class="stat-data stat-highlight">35 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Độ tuổi</div>
+            <div class="stat-data">21 - 60 Tuổi</div>
+          </div>
+          <div>
+            <div class="stat-caption">Thẩm định</div>
+            <div class="stat-data">Tự động</div>
+          </div>
+          <div>
+            <div class="stat-caption">Nhận tiền</div>
+            <div class="stat-data">Sau 5 Phút</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất tháng</div>
-          <div class="stat-data">2.53% / tháng</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Hạn mức tối đa: <span class="val-green">35 Triệu</span></div>
+          <div class="spec-group">Lãi suất tháng: <b>2.53% / tháng</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Giải ngân</div>
-          <div class="stat-data">Chỉ 5 Phút</div>
+
+        <div class="action-group">
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Thủ tục siêu đơn giản: Chỉ cần Căn cước công dân (CCCD) gắn chip</li>
-        <li><span>✓</span> Độ tuổi áp dụng: 21 - 60 tuổi, duyệt tự động nhanh chóng</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-get-loan">ĐĂNG KÝ VAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Thủ tục gọn: Đăng ký định danh CCCD gắn chip qua camera điện thoại.</p>
+          <p>• Hỗ trợ mọi khách hàng từ 21 đến 60 tuổi không cần gặp mặt.</p>
+        </div>
       </div>
     </div>
 
     <!-- 11. TNEX -->
-    <div class="loan-card" data-cat="cccd taikhoan">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh the">
+      <div class="card-top-tag tag-orange">Ưu đãi lãi suất 1.4% - Duyệt 2 phút</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="tnex.WEBP" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png&w=100'" alt="TNEX">
           </div>
           <div>
-            <div class="brand-title">TNEX Vay Nhanh</div>
-            <span class="brand-subtag tag-highlight">Ưu Đãi Lãi Suất</span>
+            <div class="brand-title">Ngân hàng số TNEX</div>
+            <div class="feature-pills">
+              <span class="pill">Vay qua ứng dụng</span>
+              <span class="pill">Miễn phí mở thẻ</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Hạn mức đến</div>
-          <div class="stat-data stat-highlight">80 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Thời gian duyệt</div>
+            <div class="stat-data">2 Phút App</div>
+          </div>
+          <div>
+            <div class="stat-caption">Độ tuổi</div>
+            <div class="stat-data">18 - 50 Tuổi</div>
+          </div>
+          <div>
+            <div class="stat-caption">Kỳ hạn</div>
+            <div class="stat-data">6 - 36 Tháng</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Lãi suất ưu đãi</div>
-          <div class="stat-data stat-highlight">1.4% / tháng</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Hạn mức tối đa: <span class="val-green">80 Triệu</span></div>
+          <div class="spec-group">Lãi suất tháng: <b>1.4% <span style="font-size:10px; color:#94a3b8; text-decoration:line-through;">2.26%</span></b></div>
         </div>
-        <div>
-          <div class="stat-caption">Giải ngân</div>
-          <div class="stat-data">2 Phút</div>
+
+        <div class="action-group">
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://zalo.me/0903101248" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Kỳ hạn vay từ 6 - 36 tháng qua ứng dụng ngân hàng số MSB</li>
-        <li><span>✓</span> Điều kiện: 18 - 50 tuổi, sinh sống tại VN, chỉ cần CCCD gắn chip</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-get-loan">VAY TẠI TNEX</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Độ tuổi áp dụng: Từ 18 đến 50 tuổi sinh sống tại Việt Nam.</p>
+          <p>• Chỉ cần CCCD gắn chip, mở tài khoản và giải ngân đồng thời trên app.</p>
+        </div>
       </div>
     </div>
 
     <!-- 12. TINVAY -->
-    <div class="loan-card" data-cat="cccd">
-      <div class="loan-head">
-        <div class="brand-cluster">
+    <div class="loan-card" data-cat="vaynhanh">
+      <div class="card-top-tag">Sàng lọc gói vay phù hợp tức thì</div>
+      <div class="card-body">
+        <div class="loan-head">
           <div class="brand-logo-frame">
             <img src="Tinvay.PNG" alt="Tinvay" onerror="this.src='https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png&w=100'">
           </div>
           <div>
-            <div class="brand-title">Tinvay</div>
-            <span class="brand-subtag">Vay Tiền Mặt Nhanh</span>
+            <div class="brand-title">Tinvay - Vay Tiền Nhanh</div>
+            <div class="feature-pills">
+              <span class="pill">Chỉ cần CCCD</span>
+              <span class="pill">Duyệt tự động</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stat-matrix">
-        <div>
-          <div class="stat-caption">Hạn mức đến</div>
-          <div class="stat-data stat-highlight">90 Triệu</div>
+
+        <div class="stat-matrix">
+          <div>
+            <div class="stat-caption">Thời gian duyệt</div>
+            <div class="stat-data">15 Phút</div>
+          </div>
+          <div>
+            <div class="stat-caption">Hình thức</div>
+            <div class="stat-data">100% Online</div>
+          </div>
+          <div>
+            <div class="stat-caption">Nhận tiền</div>
+            <div class="stat-data">Qua Thẻ ATM</div>
+          </div>
         </div>
-        <div>
-          <div class="stat-caption">Thời gian duyệt</div>
-          <div class="stat-data">15 Phút</div>
+
+        <div class="loan-quick-spec">
+          <div class="spec-group">Hạn mức đến: <span class="val-green">90 Triệu</span></div>
+          <div class="spec-group">Điều kiện: <b>Chỉ CCCD</b></div>
         </div>
-        <div>
-          <div class="stat-caption">Hồ sơ</div>
-          <div class="stat-data">Chỉ CCCD</div>
+
+        <div class="action-group">
+          <a href="https://shorten.asia/N1DSUfmD" target="_blank" class="btn-check-rate">XEM TỈ LỆ DUYỆT</a>
+          <a href="https://shorten.asia/N1DSUfmD" target="_blank" class="btn-apply-main">ĐĂNG KÝ NGAY</a>
         </div>
-      </div>
-      <ul class="bullet-list">
-        <li><span>✓</span> Kết nối khoản vay tự động qua hệ thống chấm điểm tài chính</li>
-        <li><span>✓</span> Đăng ký 100% online không gặp mặt, nhận tiền qua thẻ ATM</li>
-      </ul>
-      <div class="action-row">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-chat">Tư vấn</a>
-        <a href="https://shorten.asia/N1DSUfmD" target="_blank" class="btn-get-loan">NHẬN TIỀN NGAY</a>
+
+        <div class="details-toggle" onclick="toggleDetails(this)">
+          <span>Chi tiết</span> ▾
+        </div>
+        <div class="details-content">
+          <div class="feature-tag-box">⭐ Tính năng</div>
+          <p>• Kết nối khoản vay tự động qua hệ thống chấm điểm tín nhiệm tài chính.</p>
+          <p>• Đăng ký trực tuyến không thẩm định người thân.</p>
+        </div>
       </div>
     </div>
 
@@ -659,6 +873,7 @@
   </footer>
 
   <script>
+    // Tính toán số tiền vay tạm tính
     function updateCalculator() {
       const amountInput = document.getElementById('rangeAmount');
       const tenureInput = document.getElementById('rangeTenure');
@@ -676,6 +891,7 @@
       document.getElementById('dispMonthly').innerText = '~' + totalMonthly.toLocaleString('vi-VN') + ' đ/tháng';
     }
 
+    // Bộ lọc danh mục
     function applyFilter(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -703,6 +919,19 @@
       const emptyState = document.getElementById('emptyState');
       if (emptyState) {
         emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    // Toggle Accordion mở rộng chi tiết sản phẩm
+    function toggleDetails(btn) {
+      const content = btn.nextElementSibling;
+      const span = btn.querySelector('span');
+      if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        btn.innerHTML = '<span>Chi tiết</span> ▾';
+      } else {
+        content.classList.add('active');
+        btn.innerHTML = '<span>Thu gọn</span> ▴';
       }
     }
 
