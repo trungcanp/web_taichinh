@@ -254,6 +254,19 @@
     .stat-big-val { font-size: 17px; font-weight: 900; color: #059669; margin-top: 2px; }
     .stat-mid-val { font-size: 13.5px; font-weight: 800; color: #0f172a; margin-top: 3px; }
 
+    /* Khung Thông Báo Mã Giới Thiệu */
+    .mgt-alert-box {
+      background: #fef2f2;
+      border: 1.5px dashed #ef4444;
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: #991b1b;
+      line-height: 1.4;
+    }
+    .mgt-alert-box b { color: #dc2626; font-size: 11.5px; font-weight: 800; }
+
     /* Nút Thao Tác Kép */
     .btn-duo { display: flex; gap: 8px; margin-bottom: 6px; }
     .btn-sub {
@@ -438,11 +451,11 @@
       Không tìm thấy sản phẩm trong mục đã chọn.
     </div>
 
-    <!-- ==================== DANH SÁCH 15 DỰ ÁN ==================== -->
+    <!-- ==================== DANH SÁCH 17 DỰ ÁN ==================== -->
 
     <!-- 1. VPBANK VAY TÍN CHẤP -->
     <div class="fin-card" data-cat="vaynhanh hancaovay">
-      <span class="badge-float badge-amber">Phân khúc Ngân Hàng</span>
+      <span class="badge-float badge-amber">Ngân Hàng Trực Tuyến</span>
       <div class="brand-meta">
         <div class="brand-avatar">
           <img src="vpbank.PNG" alt="VPBank Vay Tín Chấp">
@@ -450,8 +463,8 @@
         <div class="brand-info">
           <h3>VPBank Vay Tín Chấp</h3>
           <div class="brand-tags">
-            <span class="sub-tag">Ưu tiên có TK VPBank</span>
-            <span class="sub-tag">Tuổi: 23 - 70</span>
+            <span class="sub-tag">Tuổi: 23 - 65</span>
+            <span class="sub-tag">Không cần CM thu nhập</span>
           </div>
         </div>
       </div>
@@ -462,7 +475,7 @@
         </div>
         <div class="stat-col">
           <div class="stat-label-small">Lãi suất chỉ từ</div>
-          <div class="stat-mid-val">16% - 38%/năm</div>
+          <div class="stat-mid-val">1.2% / tháng</div>
         </div>
       </div>
       <div class="btn-duo">
@@ -473,61 +486,189 @@
         <span>Xem điều kiện chi tiết</span> ▾
       </div>
       <div class="accordion-box">
-        <div class="sec-title">I. Điều kiện:</div>
-        <p>• Quốc tịch: Việt Nam, độ tuổi từ 23 đến 70 tuổi tại thời điểm nộp hồ sơ.</p>
-        <p>• Giấy tờ: Chỉ cần CCCD gắn chip/mã vạch còn hạn.</p>
-        <p>• Ưu tiên khách hàng đang sử dụng tài khoản thanh toán hoặc thẻ tín dụng VPBank.</p>
-        <div class="sec-title">II. Đặc điểm:</div>
-        <p>• Hạn mức: Đến 100 triệu đồng. Lãi suất: 16% - 38%/năm (tính trên dư nợ giảm dần).</p>
-        <p>• Phí bảo hiểm khoản vay: 1.3% - 1.8%.</p>
-        <p class="alert-red">• Lưu ý: KHÔNG hỗ trợ khách hàng có nợ xấu, nợ quá hạn CIC.</p>
+        <div class="sec-title">I. Ưu đãi & Điều kiện:</div>
+        <p>• Hạn mức: Từ 10 triệu – 100 triệu VND. Kỳ hạn: 06 – 60 tháng.</p>
+        <p>• Lãi suất: Chỉ từ 1.2%/tháng. Không cần tài sản đảm bảo hay chứng minh thu nhập.</p>
+        <p>• Độ tuổi: 23 – 65 tuổi. Khu vực hỗ trợ: Toàn quốc.</p>
+        <p class="alert-red">• Lịch sử tín dụng: Không có nợ xấu, nợ quá hạn.</p>
       </div>
     </div>
 
-    <!-- 2. VPBANK THẺ TÍN DỤNG -->
-    <div class="fin-card" data-cat="the">
-      <span class="badge-float badge-emerald">Thẻ Tín Dụng Ngân Hàng</span>
+    <!-- 2. FE CREDIT -->
+    <div class="fin-card" data-cat="vaynhanh hancaovay">
+      <span class="badge-float badge-rose">100% Online - Chỉ Cần CCCD</span>
       <div class="brand-meta">
         <div class="brand-avatar">
-          <img src="vpbank.PNG" alt="VPBank Thẻ Tín Dụng">
+          <img src="fe.JPG" alt="FE Credit">
         </div>
         <div class="brand-info">
-          <h3>VPBank Thẻ Tín Dụng</h3>
+          <h3>FE Credit</h3>
           <div class="brand-tags">
-            <span class="sub-tag">Miễn lãi 45 ngày</span>
-            <span class="sub-tag">Hoàn tiền chi tiêu</span>
+            <span class="sub-tag">Toàn quốc</span>
+            <span class="sub-tag">Tuổi: 20 - 60</span>
           </div>
         </div>
       </div>
       <div class="stat-cluster">
         <div class="stat-col">
-          <div class="stat-label-small">Hạn mức cấp thẻ</div>
+          <div class="stat-label-small">Hạn mức tối đa</div>
           <div class="stat-big-val">100 Triệu</div>
         </div>
         <div class="stat-col">
-          <div class="stat-label-small">Phí thường niên</div>
-          <div class="stat-mid-val">Miễn phí năm 1</div>
+          <div class="stat-label-small">Lãi suất chỉ từ</div>
+          <div class="stat-mid-val">1.95% / tháng</div>
         </div>
       </div>
       <div class="btn-duo">
-        <a href="https://go.clickbuy.asia/click?a=64203&o=1174" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
-        <a href="https://go.clickbuy.asia/click?a=64203&o=1174" target="_blank" class="btn-primary">MỞ THẺ NGAY</a>
+        <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
+        <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
       </div>
       <div class="accordion-btn" onclick="toggleCard(this)">
         <span>Xem điều kiện chi tiết</span> ▾
       </div>
       <div class="accordion-box">
-        <div class="sec-title">I. Điều kiện:</div>
-        <p>• Công dân Việt Nam từ 22 đến 60 tuổi.</p>
-        <p>• CCCD, thu nhập hoặc có lịch sử tín dụng / tiền gửi tốt.</p>
-        <div class="sec-title">II. Đặc điểm:</div>
-        <p>• Hạn mức thẻ: Lên đến 100 triệu đồng. Miễn lãi tối đa 45 ngày.</p>
-        <p>• Miễn phí thường niên năm đầu tiên.</p>
-        <p class="alert-red">• Lưu ý: KHÔNG hỗ trợ nợ xấu.</p>
+        <div class="sec-title">I. Ưu đãi & Điều kiện đăng ký:</div>
+        <p>• Hạn mức: Lên đến 100 triệu đồng. Kỳ hạn: 6 – 36 tháng.</p>
+        <p>• Thực hiện 100% Online. Hồ sơ chỉ cần Căn cước công dân (CMND/CCCD).</p>
+        <p>• Độ tuổi: 20 – 60 tuổi. Khu vực: Toàn quốc. Thu nhập từ 3.000.000 VNĐ/tháng.</p>
+        <p class="alert-red">• Lịch sử tín dụng: KHÔNG có nợ xấu, nợ chú ý trong vòng 12 tháng gần nhất.</p>
       </div>
     </div>
 
-    <!-- 3. SHB FINANCE -->
+    <!-- 3. VIB QUICK CASH -->
+    <div class="fin-card" data-cat="vaynhanh">
+      <span class="badge-float badge-emerald">Duyệt Siêu Tốc 3 Phút (App MAX)</span>
+      <div class="brand-meta">
+        <div class="brand-avatar">
+          <img src="vib.WEBP" alt="VIB Quick Cash">
+        </div>
+        <div class="brand-info">
+          <h3>VIB Quick Cash</h3>
+          <div class="brand-tags">
+            <span class="sub-tag">Cố định 36 tháng</span>
+            <span class="sub-tag">Nhận tiền 5 phút</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-cluster">
+        <div class="stat-col">
+          <div class="stat-label-small">Khoản vay cố định</div>
+          <div class="stat-big-val">30 Triệu</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-label-small">Thời gian duyệt</div>
+          <div class="stat-mid-val">3 - 5 Phút</div>
+        </div>
+      </div>
+
+      <!-- Khung cảnh báo MGT bắt buộc -->
+      <div class="mgt-alert-box">
+        ⚠️ <b>LƯU Ý BẮT BUỘC KHI TẢI APP:</b> Tại ô Mã giới thiệu, nếu app không tự điền, phải nhập tay mã: <b>PAFIMI[SĐT-CỦA-BẠN]</b> (Ví dụ: SĐT 0903123456 👉 nhập <b>PAFIMI0903123456</b>) để được giải ngân.
+      </div>
+
+      <div class="btn-duo">
+        <a href="https://lead.nextgrowth.vn/5QnKFVtshgkG" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
+        <a href="https://lead.nextgrowth.vn/5QnKFVtshgkG" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
+      </div>
+      <div class="accordion-btn" onclick="toggleCard(this)">
+        <span>Xem điều kiện chi tiết</span> ▾
+      </div>
+      <div class="accordion-box">
+        <div class="sec-title">I. Điều kiện đăng ký:</div>
+        <p>• Độ tuổi: Nữ 22 – 52 tuổi; Nam 22 – 57 tuổi. Thu nhập tối thiểu từ 7 triệu đồng/tháng.</p>
+        <p>• <b>Điều kiện thẻ tín dụng:</b> Có ít nhất 1 thẻ tín dụng hạn mức từ 10 triệu (thẻ không TSBĐ, còn hoạt động) và có lịch sử dùng thẻ/vay tại các NH từ 6 tháng trở lên.</p>
+        <p>• Phí tất toán trước hạn: 2% – 4% theo dư nợ còn lại, giảm dần theo từng năm.</p>
+        <p class="alert-red">• Lịch sử tín dụng: Không nợ xấu trong vòng 2 năm gần nhất. Khách đang có khoản vay UPL/Supercash tại VIB chưa đủ điều kiện.</p>
+        <p class="alert-red">• Địa bàn loại trừ: Tuyên Quang, Cao Bằng, Lai Châu, Lào Cai, Điện Biên, Lạng Sơn, Sơn La, Ninh Bình, Quảng Trị.</p>
+        <div class="sec-title">II. Quy trình nhập mã giới thiệu:</div>
+        <p>1. Bấm Đăng ký ngay để điền eForm FIMI ➔ 2. Tải app MAX by VIB ➔ 3. Kiểm tra ô mã giới thiệu, nhập tay <b>PAFIMI(số điện thoại đăng ký)</b> nếu ô trống.</p>
+      </div>
+    </div>
+
+    <!-- 4. SHINHAN FINANCE -->
+    <div class="fin-card" data-cat="hancaovay luong">
+      <span class="badge-float badge-amber">Vay Hạn Mức Lớn 300 Triệu</span>
+      <div class="brand-meta">
+        <div class="brand-avatar">
+          <span style="font-size: 26px;">🏦</span>
+        </div>
+        <div class="brand-info">
+          <h3>Shinhan Finance</h3>
+          <div class="brand-tags">
+            <span class="sub-tag">Lãi từ 18%/năm</span>
+            <span class="sub-tag">Kỳ hạn đến 48T</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-cluster">
+        <div class="stat-col">
+          <div class="stat-label-small">Hạn mức lên đến</div>
+          <div class="stat-big-val">300 Triệu</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-label-small">Lãi suất từ</div>
+          <div class="stat-mid-val">18% - 49%/năm</div>
+        </div>
+      </div>
+      <div class="btn-duo">
+        <a href="https://lead.fimi.tech/shf/y6UGHBYI69qb?utmSource=DSA" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
+        <a href="https://lead.fimi.tech/shf/y6UGHBYI69qb?utmSource=DSA" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
+      </div>
+      <div class="accordion-btn" onclick="toggleCard(this)">
+        <span>Xem điều kiện chi tiết</span> ▾
+      </div>
+      <div class="accordion-box">
+        <div class="sec-title">I. Điều kiện áp dụng:</div>
+        <p>• Độ tuổi: Nữ 21 – 55 tuổi; Nam 21 – 58 tuổi. Địa bàn: Toàn quốc.</p>
+        <p>• Hồ sơ nhân thân: Căn cước công dân + <b>VNeID định danh cấp 2</b> (bắt buộc).</p>
+        <p>• Hồ sơ công việc: HĐLĐ + Sao kê lương (hoặc thay thế bằng Hợp đồng BHNT / Sao kê thẻ tín dụng).</p>
+        <p>• Hồ sơ khác: Chứng minh mục đích sử dụng vốn + Sơ đồ nhà ở (bắt buộc).</p>
+        <p class="alert-red">• Lịch sử tín dụng: Không nợ xấu và nợ chú ý trong vòng 2 năm gần nhất.</p>
+      </div>
+    </div>
+
+    <!-- 5. TNEX VAY NHANH -->
+    <div class="fin-card" data-cat="vaynhanh">
+      <span class="badge-float badge-emerald">Ngân Hàng Số MSB</span>
+      <div class="brand-meta">
+        <div class="brand-avatar">
+          <img src="tnex.WEBP" alt="TNEX Vay nhanh">
+        </div>
+        <div class="brand-info">
+          <h3>TNEX Vay nhanh</h3>
+          <div class="brand-tags">
+            <span class="sub-tag">Tuổi: 18 - 50</span>
+            <span class="sub-tag">Duyệt 30 phút</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-cluster">
+        <div class="stat-col">
+          <div class="stat-label-small">Hạn mức vay</div>
+          <div class="stat-big-val">30 Triệu</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-label-small">Kỳ hạn tối đa</div>
+          <div class="stat-mid-val">15 Tháng</div>
+        </div>
+      </div>
+      <div class="btn-duo">
+        <a href="https://lead.fimi.tech/tnex/mQobykAFZCId?utmSource=DSA" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
+        <a href="https://lead.fimi.tech/tnex/mQobykAFZCId?utmSource=DSA" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
+      </div>
+      <div class="accordion-btn" onclick="toggleCard(this)">
+        <span>Xem điều kiện chi tiết</span> ▾
+      </div>
+      <div class="accordion-box">
+        <div class="sec-title">I. Ưu đãi & Điều kiện:</div>
+        <p>• Thực hiện 100% Online, nhận kết quả trong 30 phút. Hạn mức: 5 – 30 triệu đồng.</p>
+        <p>• Lãi suất: 45% đến 60%/năm theo xếp hạng tín dụng. Hồ sơ: CCCD (sinh trước 2000 bổ sung thêm số CMT 9 số cũ).</p>
+        <p class="alert-red">• Lịch sử tín dụng: Không nợ xấu và nợ chú ý trong vòng 2 năm gần nhất.</p>
+        <p class="alert-red">• Loại trừ 16 tỉnh: Hải Phòng, Quảng Ninh, Điện Biên, Lai Châu, Sơn La, Tuyên Quang, Kon Tum, Yên Bái, Sóc Trăng, Bến Tre, Tây Ninh, Cà Mau, Đắk Nông, Đắk Lắk, Gia Lai.</p>
+      </div>
+    </div>
+
+    <!-- 6. SHB FINANCE -->
     <div class="fin-card" data-cat="vaynhanh hancaovay luong">
       <span class="badge-float badge-emerald">Duyệt Nhanh 7 Lần Thu Nhập</span>
       <div class="brand-meta">
@@ -570,7 +711,7 @@
       </div>
     </div>
 
-    <!-- 4. LOTTE FINANCE -->
+    <!-- 7. LOTTE FINANCE -->
     <div class="fin-card" data-cat="hancaovay luong">
       <span class="badge-float badge-amber">Vay Lương & Bảo Hiểm Nhân Thọ</span>
       <div class="brand-meta">
@@ -612,48 +753,7 @@
       </div>
     </div>
 
-    <!-- 5. FE CREDIT -->
-    <div class="fin-card" data-cat="vaynhanh hancaovay">
-      <span class="badge-float badge-rose">Chỉ Cần CCCD - Hỗ Trợ Nhóm 1</span>
-      <div class="brand-meta">
-        <div class="brand-avatar">
-          <img src="fe.JPG" alt="FE Credit">
-        </div>
-        <div class="brand-info">
-          <h3>FE Credit</h3>
-          <div class="brand-tags">
-            <span class="sub-tag">Chỉ cần CCCD</span>
-            <span class="sub-tag">Thu nhập từ 3tr</span>
-          </div>
-        </div>
-      </div>
-      <div class="stat-cluster">
-        <div class="stat-col">
-          <div class="stat-label-small">Hạn mức duyệt đến</div>
-          <div class="stat-big-val">100 Triệu</div>
-        </div>
-        <div class="stat-col">
-          <div class="stat-label-small">Lãi suất chỉ từ</div>
-          <div class="stat-mid-val">1.95% / tháng</div>
-        </div>
-      </div>
-      <div class="btn-duo">
-        <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
-        <a href="https://aff.cnext.vn/fin/FEOL_FLEX/C251100002" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
-      </div>
-      <div class="accordion-btn" onclick="toggleCard(this)">
-        <span>Xem điều kiện chi tiết</span> ▾
-      </div>
-      <div class="accordion-box">
-        <div class="sec-title">I. Điều kiện:</div>
-        <p>• Công dân Việt Nam từ 20 đến 60 tuổi. Thu nhập từ 3 triệu/tháng, chỉ cần CCCD.</p>
-        <p class="highlight-blue">• Điểm cộng: Có hỗ trợ khách nợ nhóm 1 (trả chậm nhẹ).</p>
-        <div class="sec-title">II. Đặc điểm:</div>
-        <p>• Hạn mức: Đến 100 triệu đồng. Lãi suất từ 1.95%/tháng (tùy phê duyệt hợp đồng).</p>
-      </div>
-    </div>
-
-    <!-- 6. HOME CREDIT -->
+    <!-- 8. HOME CREDIT -->
     <div class="fin-card" data-cat="vaynhanh hancaovay">
       <span class="badge-float badge-emerald">Hạn Mức Khủng Tới 250 Triệu</span>
       <div class="brand-meta">
@@ -693,7 +793,7 @@
       </div>
     </div>
 
-    <!-- 7. CATHAY UNITED BANK -->
+    <!-- 9. CATHAY UNITED BANK -->
     <div class="fin-card" data-cat="vaynhanh">
       <span class="badge-float badge-emerald">Vay Hạn Mức Tự Do Rút Tiền</span>
       <div class="brand-meta">
@@ -734,7 +834,50 @@
       </div>
     </div>
 
-    <!-- 8. TPBANK EVO THẺ TÍN DỤNG -->
+    <!-- 10. VPBANK THẺ TÍN DỤNG -->
+    <div class="fin-card" data-cat="the">
+      <span class="badge-float badge-emerald">Thẻ Tín Dụng Ngân Hàng</span>
+      <div class="brand-meta">
+        <div class="brand-avatar">
+          <img src="vpbank.PNG" alt="VPBank Thẻ Tín Dụng">
+        </div>
+        <div class="brand-info">
+          <h3>VPBank Thẻ Tín Dụng</h3>
+          <div class="brand-tags">
+            <span class="sub-tag">Miễn lãi 45 ngày</span>
+            <span class="sub-tag">Hoàn tiền chi tiêu</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-cluster">
+        <div class="stat-col">
+          <div class="stat-label-small">Hạn mức cấp thẻ</div>
+          <div class="stat-big-val">100 Triệu</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-label-small">Phí thường niên</div>
+          <div class="stat-mid-val">Miễn phí năm 1</div>
+        </div>
+      </div>
+      <div class="btn-duo">
+        <a href="https://go.clickbuy.asia/click?a=64203&o=1174" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
+        <a href="https://go.clickbuy.asia/click?a=64203&o=1174" target="_blank" class="btn-primary">MỞ THẺ NGAY</a>
+      </div>
+      <div class="accordion-btn" onclick="toggleCard(this)">
+        <span>Xem điều kiện chi tiết</span> ▾
+      </div>
+      <div class="accordion-box">
+        <div class="sec-title">I. Điều kiện:</div>
+        <p>• Công dân Việt Nam từ 22 đến 60 tuổi.</p>
+        <p>• CCCD, thu nhập hoặc có lịch sử tín dụng / tiền gửi tốt.</p>
+        <div class="sec-title">II. Đặc điểm:</div>
+        <p>• Hạn mức thẻ: Lên đến 100 triệu đồng. Miễn lãi tối đa 45 ngày.</p>
+        <p>• Miễn phí thường niên năm đầu tiên.</p>
+        <p class="alert-red">• Lưu ý: KHÔNG hỗ trợ nợ xấu.</p>
+      </div>
+    </div>
+
+    <!-- 11. TPBANK EVO THẺ TÍN DỤNG -->
     <div class="fin-card" data-cat="the">
       <span class="badge-float badge-emerald">Mở Thẻ Online 10 Phút eKYC</span>
       <div class="brand-meta">
@@ -774,7 +917,7 @@
       </div>
     </div>
 
-    <!-- 9. TIN VAY - VAY NHANH (VIETCREDIT) -->
+    <!-- 12. TIN VAY - VAY NHANH (VIETCREDIT) -->
     <div class="fin-card" data-cat="vaynhanh">
       <span class="badge-float badge-emerald">Vay Tiền Mặt VietCredit</span>
       <div class="brand-meta">
@@ -814,7 +957,7 @@
       </div>
     </div>
 
-    <!-- 10. TINVAY - VAY SIM VIETTEL -->
+    <!-- 13. TINVAY - VAY SIM VIETTEL -->
     <div class="fin-card" data-cat="vaynhanh">
       <span class="badge-float badge-amber">Vay Nhanh Theo Sim Viettel</span>
       <div class="brand-meta">
@@ -854,7 +997,7 @@
       </div>
     </div>
 
-    <!-- 11. TPBANK VAY NHANH -->
+    <!-- 14. TPBANK VAY NHANH -->
     <div class="fin-card" data-cat="vaynhanh">
       <span class="badge-float badge-amber">Ngân Hàng Tiên Phong - Duyệt 15 Phút</span>
       <div class="brand-meta">
@@ -894,7 +1037,7 @@
       </div>
     </div>
 
-    <!-- 12. F88 - VAY CAVET XE -->
+    <!-- 15. F88 - VAY CAVET XE -->
     <div class="fin-card" data-cat="vaynhanh hancaovay noxau">
       <span class="badge-float badge-rose">Hỗ Trợ Nợ Xấu - Vẫn Giữ Xe Đi</span>
       <div class="brand-meta">
@@ -935,7 +1078,7 @@
       </div>
     </div>
 
-    <!-- 13. MCREDIT VAY NHANH -->
+    <!-- 16. MCREDIT VAY NHANH -->
     <div class="fin-card" data-cat="vaynhanh">
       <span class="badge-float badge-emerald">Chỉ Cần CCCD - Ưu Tiên Khách Cũ</span>
       <div class="brand-meta">
@@ -975,47 +1118,7 @@
       </div>
     </div>
 
-    <!-- 14. TNEX VAY NHANH -->
-    <div class="fin-card" data-cat="vaynhanh">
-      <span class="badge-float badge-emerald">Ngân Hàng Số MSB</span>
-      <div class="brand-meta">
-        <div class="brand-avatar">
-          <img src="tnex.WEBP" alt="TNEX">
-        </div>
-        <div class="brand-info">
-          <h3>TNEX Vay nhanh</h3>
-          <div class="brand-tags">
-            <span class="sub-tag">CCCD duyệt 40tr</span>
-            <span class="sub-tag">Tuổi: 18 - 50</span>
-          </div>
-        </div>
-      </div>
-      <div class="stat-cluster">
-        <div class="stat-col">
-          <div class="stat-label-small">Hạn mức lên tới</div>
-          <div class="stat-big-val">40 Triệu</div>
-        </div>
-        <div class="stat-col">
-          <div class="stat-label-small">Lãi suất năm</div>
-          <div class="stat-mid-val">45% / năm</div>
-        </div>
-      </div>
-      <div class="btn-duo">
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-sub">Tỉ Lệ Duyệt</a>
-        <a href="https://zalo.me/0903101248" target="_blank" class="btn-primary">ĐĂNG KÝ NGAY</a>
-      </div>
-      <div class="accordion-btn" onclick="toggleCard(this)">
-        <span>Xem điều kiện chi tiết</span> ▾
-      </div>
-      <div class="accordion-box">
-        <div class="sec-title">I. Điều kiện & Đặc điểm:</div>
-        <p>• Chỉ cần CCCD vay tối đa 40 triệu; Khách hàng có hợp đồng thế chấp ngân hàng hỗ trợ tối đa 80 triệu.</p>
-        <p>• Lãi suất 45%/năm theo dư nợ giảm dần. Phí tất toán 350.000đ, bảo hiểm tối đa 6%.</p>
-        <p class="alert-red">• Lưu ý: Không có nợ nhóm 2 trong 12 tháng gần nhất.</p>
-      </div>
-    </div>
-
-    <!-- 15. CAKE BY VPBANK -->
+    <!-- 17. CAKE BY VPBANK -->
     <div class="fin-card" data-cat="vaynhanh the">
       <span class="badge-float badge-amber">App Số Be / VPBank</span>
       <div class="brand-meta">
